@@ -9,7 +9,6 @@ interface AnimatedSectionProps {
   animation?: 'fadeUp' | 'fadeIn' | 'slideLeft' | 'slideRight' | 'scaleIn';
   delay?: number;
   threshold?: number;
-  as?: keyof JSX.IntrinsicElements;
 }
 
 export default function AnimatedSection({
@@ -18,9 +17,8 @@ export default function AnimatedSection({
   animation = 'fadeUp',
   delay = 0,
   threshold = 0.12,
-  as: Tag = 'div',
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -45,13 +43,12 @@ export default function AnimatedSection({
   const visibleClass = isVisible ? styles.visible : '';
 
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
+    <div
       ref={ref}
       className={`${styles.base} ${animClass} ${visibleClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }
