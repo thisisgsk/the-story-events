@@ -1,0 +1,159 @@
+.section {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-py);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Masonry-style grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Make first item span 2 columns */
+  .gridItem:first-child {
+    grid-column: span 2;
+  }
+
+  /* Make 4th item span 2 columns */
+  .gridItem:nth-child(4) {
+    grid-column: span 2;
+  }
+}
+
+.gridItem {
+  display: block;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.imgWrapper {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.imgWrapper img {
+  transition: transform var(--transition-slow);
+}
+
+@media (hover: hover) {
+  .gridItem:hover .imgWrapper img {
+    transform: scale(1.06);
+  }
+
+  .gridItem:hover .hoverOverlay {
+    opacity: 1;
+  }
+}
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 24, 18, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 2;
+}
+
+.expandIcon {
+  font-size: 2rem;
+  color: #FFFFFF;
+  opacity: 0.85;
+}
+
+/* Lightbox */
+.lightboxInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 1;
+}
+
+.lightboxCaption {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.55);
+  font-style: italic;
+  text-align: center;
+}
+
+.navPrev,
+.navNext {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.2);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  z-index: 10;
+}
+
+.navPrev { left: var(--space-6); }
+.navNext { right: var(--space-6); }
+
+.navPrev:hover,
+.navNext:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.counter {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+}

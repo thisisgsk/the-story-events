@@ -1,0 +1,20 @@
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-8); } }
+.cardWrap { height: 100%; }
+.card { background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); overflow: hidden; height: 100%; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+@media (hover: hover) { .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); } .card:hover .imgWrapper img { transform: scale(1.06); } }
+.imgWrapper { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.imgWrapper img { transition: transform var(--transition-slow); }
+.overlay { position: absolute; inset: 0; background: rgba(42,24,18,0.14); z-index: 1; }
+.venueBadge { position: absolute; bottom: var(--space-4); left: var(--space-4); z-index: 2; font-family: var(--font-label); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(254,247,242,0.94); color: var(--color-text-secondary); padding: 3px 10px; border-radius: 99px; }
+.cardBody { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+.guideTitle { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 600; color: var(--color-text-primary); }
+.guideDesc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+.venueTypes, .venueNames { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.guideType { font-family: var(--font-label); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-1); }
+.typeTag { font-family: var(--font-label); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); background: var(--color-surface); padding: 2px 8px; border-radius: 99px; }
+.cta { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); transition: color var(--transition-fast); }
+.cta:hover { color: var(--color-accent-dark); }
+.consultSection { background: var(--color-text-primary); padding-block: var(--section-py); text-align: center; }
+.consultCta { margin-top: var(--space-8); }

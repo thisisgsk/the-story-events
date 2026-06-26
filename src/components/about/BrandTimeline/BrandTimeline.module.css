@@ -1,0 +1,12 @@
+.section { background: #FFFFFF; }
+.timeline { display: flex; flex-direction: column; gap: 0; max-width: 860px; margin: 0 auto; position: relative; }
+.entry { display: grid; grid-template-columns: 80px 40px 1fr; gap: var(--space-4); align-items: flex-start; padding-bottom: var(--space-8); }
+@media (max-width: 640px) { .entry { grid-template-columns: 64px 32px 1fr; gap: var(--space-3); } }
+.yearCol { text-align: right; padding-top: 10px; }
+.year { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--color-accent); line-height: 1; }
+.connector { display: flex; flex-direction: column; align-items: center; padding-top: 10px; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: var(--color-accent); border: 3px solid var(--color-bg-alt); box-shadow: 0 0 0 2px var(--color-accent); flex-shrink: 0; }
+.line { width: 2px; flex: 1; min-height: 40px; background: linear-gradient(to bottom, var(--color-border), transparent); margin-top: var(--space-2); }
+.textCol { padding-top: 4px; padding-bottom: var(--space-4); }
+.title { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-2); }
+.desc { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.75; }

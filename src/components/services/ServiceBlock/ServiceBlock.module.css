@@ -1,0 +1,226 @@
+/* ─── ServiceBlock ─────────────────────────────────────────────────────────── */
+
+/* ── Section shell ─────────────────────────────────────────────────────────── */
+.block {
+  padding-block: var(--section-py);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.blockAlt {
+  background-color: var(--color-bg-alt);
+}
+
+/* ── Two-column grid ────────────────────────────────────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+  }
+
+  /* Reversed layout: text left, image right */
+  .innerReversed {
+    direction: rtl; /* flip column order */
+  }
+
+  .innerReversed > * {
+    direction: ltr; /* restore text direction for children */
+  }
+}
+
+@media (min-width: 1100px) {
+  .inner {
+    grid-template-columns: 52% 44%;
+    gap: 4%;
+  }
+
+  .innerReversed {
+    grid-template-columns: 44% 52%;
+  }
+}
+
+/* ── Image side ─────────────────────────────────────────────────────────────── */
+.imageSide {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.imageWrap:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 24px 72px rgba(42, 24, 18, 0.22);
+}
+
+/* Service number badge — overlapping corner */
+.numberBadge {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  width: 80px;
+  height: 80px;
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  letter-spacing: -0.03em;
+  z-index: 2;
+}
+
+/* ── Text side ──────────────────────────────────────────────────────────────── */
+.textSide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.decorIcon {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-5);
+  opacity: 0.65;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  display: block;
+  width: fit-content;
+}
+
+.textSide:hover .decorIcon {
+  opacity: 0.9;
+  transform: scale(1.1) rotate(8deg);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(var(--text-base), 1.6vw, var(--text-xl));
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+  line-height: 1.4;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-8);
+  max-width: 58ch;
+}
+
+/* ── Features list ──────────────────────────────────────────────────────────── */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+.checkmark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(184, 120, 90, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.featureItem:hover .checkmark {
+  transform: scale(1.15);
+  box-shadow: 0 3px 10px rgba(184, 120, 90, 0.45);
+}
+
+/* ── CTA button ─────────────────────────────────────────────────────────────── */
+.cta {
+  align-self: flex-start;
+  min-width: 240px;
+  justify-content: center;
+}
+
+/* ── Mobile: image always on top ────────────────────────────────────────────── */
+@media (max-width: 899px) {
+  .imageSide {
+    order: -1;
+  }
+
+  .numberBadge {
+    width: 64px;
+    height: 64px;
+    font-size: var(--text-2xl);
+    bottom: -0.75rem;
+    right: -0.75rem;
+  }
+
+  .decorIcon {
+    font-size: 2.75rem;
+  }
+}

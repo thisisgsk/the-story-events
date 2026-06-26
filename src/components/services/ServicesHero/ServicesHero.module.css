@@ -1,0 +1,109 @@
+/* ─── ServicesHero ─────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 80px; /* nav clearance */
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(42, 24, 18, 0.25) 0%,
+    rgba(42, 24, 18, 0.55) 50%,
+    rgba(42, 24, 18, 0.78) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: var(--space-16);
+  padding-top: var(--space-20);
+  max-width: var(--container-max);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-5);
+  opacity: 0.9;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 7vw, var(--text-7xl));
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-6);
+}
+
+.title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent-light);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 52ch;
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+  letter-spacing: 0.015em;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 220px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dividerIcon {
+  font-size: 0.85rem;
+  color: var(--color-accent-light);
+  opacity: 0.8;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 62vh;
+    padding-top: 100px;
+  }
+}

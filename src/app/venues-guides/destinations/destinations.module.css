@@ -1,0 +1,20 @@
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-8); } }
+.cardWrap { height: 100%; }
+.card { display: flex; flex-direction: column; text-decoration: none; border-radius: var(--radius-xl); overflow: hidden; background: #FFFFFF; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-sm); height: 100%; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+@media (hover: hover) { .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); } .card:hover .imgWrapper img { transform: scale(1.06); } }
+.imgWrapper { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+.imgWrapper img { transition: transform var(--transition-slow); }
+.overlay { position: absolute; inset: 0; background: rgba(42,24,18,0.1); transition: background var(--transition-base); z-index: 1; }
+.cardBody { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+.badge { font-family: var(--font-label); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); background: var(--color-surface); padding: 3px 10px; border-radius: var(--radius-full); display: inline-block; align-self: flex-start; }
+.destName { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 600; color: var(--color-text-primary); }
+.tagline { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; font-style: italic; }
+.highlights { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.highlight { font-family: var(--font-label); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted); background: var(--color-bg-alt); padding: 3px 8px; border-radius: var(--radius-full); border: 1px solid var(--color-border-light); }
+.readMore { font-family: var(--font-label); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-top: auto; }
+.ctaSection { background: var(--color-text-primary); padding-block: var(--section-py); text-align: center; }
+.ctaLabel { font-family: var(--font-label); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent-light); margin-bottom: var(--space-4); }
+.ctaTitle { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: #FFFFFF; margin-bottom: var(--space-4); }
+.ctaSub { font-size: var(--text-lg); color: rgba(255,255,255,0.6); max-width: 44ch; margin: 0 auto var(--space-8); line-height: 1.7; }

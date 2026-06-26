@@ -1,0 +1,15 @@
+.section { background: var(--color-bg-alt); }
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: center; }
+@media (min-width: 768px) { .grid { grid-template-columns: 380px 1fr; gap: var(--space-16); } }
+.imageCol {}
+.imgWrapper { position: relative; aspect-ratio: 3/4; border-radius: 50% 50% var(--radius-xl) var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); max-width: 360px; margin: 0 auto; }
+.textCol {}
+.label { display: block; font-family: var(--font-label); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-3); }
+.heading { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 600; color: var(--color-text-primary); margin-bottom: var(--space-4); }
+.ornament { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6); }
+.line { display: block; width: 40px; height: 1px; background: var(--color-border); }
+.rose { color: var(--color-primary-light); font-size: 0.72rem; opacity: 0.7; }
+.para { font-size: var(--text-base); line-height: 1.9; color: var(--color-text-secondary); margin-bottom: var(--space-5); }
+.signature { margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--color-border-light); }
+.signatureName { display: block; font-family: var(--font-display); font-size: var(--text-2xl); font-style: italic; color: var(--color-text-primary); margin-bottom: 4px; }
+.signatureRole { display: block; font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted); }

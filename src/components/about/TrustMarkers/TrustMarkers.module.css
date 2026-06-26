@@ -1,0 +1,12 @@
+.section { background: var(--color-text-primary); }
+.statsGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-8); margin-bottom: var(--space-12); }
+@media (min-width: 768px) { .statsGrid { grid-template-columns: repeat(4, 1fr); } }
+.statItem { text-align: center; padding: var(--space-6); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); }
+.statValue { display: block; font-family: var(--font-display); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 700; color: #FFFFFF; line-height: 1; margin-bottom: var(--space-2); }
+.statLabel { display: block; font-family: var(--font-label); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.sectionLabel { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: var(--space-4); text-align: center; }
+.awards { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-10); }
+.awardBadge { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(196,149,106,0.4); color: var(--color-accent-light); padding: var(--space-2) var(--space-5); border-radius: var(--radius-full); }
+.certs { display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: center; }
+.cert { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: var(--space-2); }
+.certCheck { color: var(--color-accent); font-size: 0.9rem; font-weight: 700; }

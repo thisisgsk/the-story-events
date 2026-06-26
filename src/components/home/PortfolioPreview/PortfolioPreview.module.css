@@ -1,0 +1,15 @@
+.section { background: var(--color-bg-alt); }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-bottom: var(--space-10); }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-6); } }
+.cardWrap { height: 100%; }
+.card { display: block; text-decoration: none; border-radius: var(--radius-lg); overflow: hidden; background: #fff; box-shadow: var(--shadow-sm); transition: transform var(--transition-base), box-shadow var(--transition-base); }
+@media (hover: hover) { .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); } .card:hover .overlay { background: rgba(42,24,18,0.52); } .card:hover .viewBtn { opacity: 1; transform: translateY(0); } .card:hover .imgWrapper img { transform: scale(1.06); } }
+.imgWrapper { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+.imgWrapper img { transition: transform var(--transition-slow); }
+.overlay { position: absolute; inset: 0; background: rgba(42,24,18,0); display: flex; align-items: center; justify-content: center; transition: background var(--transition-base); z-index: 2; }
+.viewBtn { font-family: var(--font-label); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; border: 1px solid rgba(255,255,255,0.55); padding: var(--space-2) var(--space-5); border-radius: var(--radius-sm); opacity: 0; transform: translateY(8px); transition: opacity var(--transition-base), transform var(--transition-base); background: rgba(255,255,255,0.08); }
+.badge { position: absolute; top: var(--space-3); left: var(--space-3); z-index: 3; font-family: var(--font-label); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(196,149,106,0.88); color: #fff; padding: 3px 10px; border-radius: 99px; backdrop-filter: blur(4px); }
+.info { padding: var(--space-4) var(--space-5); }
+.coupleName { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-bottom: 2px; }
+.location { font-size: var(--text-xs); color: var(--color-text-muted); font-family: var(--font-label); letter-spacing: 0.06em; text-transform: uppercase; }
+.cta { text-align: center; }

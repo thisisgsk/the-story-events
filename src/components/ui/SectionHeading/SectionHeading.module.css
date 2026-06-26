@@ -1,0 +1,84 @@
+.wrapper {
+  margin-bottom: var(--space-12);
+}
+
+.centered {
+  text-align: center;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.light .label {
+  color: var(--color-accent-light);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+}
+
+.light .title {
+  color: #FFFFFF;
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 58ch;
+}
+
+.centered .subtitle {
+  margin-inline: auto;
+}
+
+.light .subtitle {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Decorative Ornament */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.centered .ornament {
+  justify-content: center;
+}
+
+.line {
+  display: block;
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.light .line {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+}
+
+.rose {
+  font-size: 0.7rem;
+  color: var(--color-primary-light);
+  opacity: 0.8;
+}
+
+.light .rose {
+  color: var(--color-accent-light);
+}

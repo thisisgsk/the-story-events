@@ -1,0 +1,15 @@
+.section { background: #FFFFFF; }
+.grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.cardWrap { height: 100%; }
+.card { background: var(--color-bg-alt); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); overflow: hidden; height: 100%; transition: transform var(--transition-base), box-shadow var(--transition-base); }
+@media (hover: hover) { .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); } .card:hover .photoWrapper img { transform: scale(1.06); } }
+.photoWrapper { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 50%; width: 140px; height: 140px; margin: var(--space-8) auto var(--space-4); box-shadow: 0 8px 24px rgba(196,149,106,0.2); }
+.photoWrapper img { transition: transform var(--transition-slow); }
+.info { padding: 0 var(--space-6) var(--space-6); text-align: center; }
+.name { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 600; color: var(--color-text-primary); margin-bottom: 4px; }
+.role { font-family: var(--font-label); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-4); }
+.bio { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--space-4); }
+.superpower { font-size: var(--text-sm); color: var(--color-text-muted); font-style: italic; }
+.superpowerLabel { font-style: normal; font-weight: 600; color: var(--color-primary); margin-right: 4px; }
