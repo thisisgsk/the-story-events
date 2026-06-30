@@ -50,10 +50,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className={styles.logo} onClick={() => setMobileOpen(false)}>
             <div className={styles.logoWhite}>
-              <Image src="/logo-white.png" alt="The Story Events" width={200} height={60} style={{ objectFit: 'contain' }} priority />
+              <Image src="/logo-white.png" alt="The Story Events" width={160} height={48} style={{ objectFit: 'contain' }} priority />
             </div>
             <div className={styles.logoMaroon}>
-              <Image src="/logo-maroon.png" alt="The Story Events" width={200} height={60} style={{ objectFit: 'contain' }} priority />
+              <Image src="/logo-maroon.png" alt="The Story Events" width={160} height={48} style={{ objectFit: 'contain' }} priority />
             </div>
           </Link>
 
