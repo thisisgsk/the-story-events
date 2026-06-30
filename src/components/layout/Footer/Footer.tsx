@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Footer.module.css';
 
 const quickLinks = [
@@ -25,8 +26,9 @@ export default function Footer() {
       <div className={styles.top}>
         {/* Brand */}
         <div className={styles.brand}>
-          <Link href="/" className={styles.logo}>The Story Events</Link>
-          <p className={styles.tagline}>Luxury Wedding Planners</p>
+          <Link href="/" className={styles.logo}>
+            <Image src="/logo-white.png" alt="The Story Events" width={200} height={60} style={{ objectFit: 'contain' }} />
+          </Link>
           <p className={styles.brandDesc}>
             We plan extraordinary weddings across India&apos;s most breathtaking destinations — with calm precision, genuine warmth, and relentless attention to the details that make a day unforgettable.
           </p>

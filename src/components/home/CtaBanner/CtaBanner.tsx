@@ -7,7 +7,7 @@ export default function CtaBanner() {
   return (
     <section className={styles.section}>
       <div className={styles.bg}>
-        <Image src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1800&q=80" alt="Begin planning your dream wedding" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+        <Image src="/home-custom/img3.jpg" alt="Begin planning your dream wedding" fill sizes="100vw" style={{ objectFit: 'cover' }} />
         <div className={styles.overlay} />
       </div>
       <div className={styles.content}>

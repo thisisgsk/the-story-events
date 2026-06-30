@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className={styles.hero} aria-label="Hero">
       <div className={styles.bg}>
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1800&q=80"
+          src="/home-custom/img3.png"
           alt="Luxury destination wedding at a palace in India"
           fill
           priority

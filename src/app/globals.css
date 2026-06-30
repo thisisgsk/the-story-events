@@ -6,31 +6,31 @@
 :root {
   /* Colors */
   --color-bg:              #F9F6ED;
-  --color-bg-alt:          #F2EEE1;
-  --color-surface:         #EBE4D5;
-  --color-surface-hover:   #E4DCC9;
-  --color-border:          #D1C7B3;
-  --color-border-light:    #E4DBCC;
+  --color-bg-alt:          #F9F6ED;
+  --color-surface:         #F9F6ED;
+  --color-surface-hover:   #F9F6ED;
+  --color-border:          #E3CA7A;
+  --color-border-light:    #E3CA7A;
 
-  --color-text-primary:    #2E0610;
+  --color-text-primary:    #6A0B22;
   --color-text-secondary:  #6A0B22;
-  --color-text-muted:      #8A3E4E;
-  --color-text-inverse:    #FFFFFF;
+  --color-text-muted:      #6A0B22;
+  --color-text-inverse:    #F9F6ED;
 
   --color-primary:         #6A0B22;
-  --color-primary-dark:    #4F0819;
-  --color-primary-light:   #8F2C41;
+  --color-primary-dark:    #6A0B22;
+  --color-primary-light:   #6A0B22;
 
   --color-accent:          #E3CA7A;
-  --color-accent-dark:     #C2A855;
-  --color-accent-light:    #F2DE9F;
+  --color-accent-dark:     #E3CA7A;
+  --color-accent-light:    #E3CA7A;
 
   --color-gold:            #E3CA7A;
-  --color-gold-dark:       #C2A855;
-  --color-gold-light:      #F2DE9F;
+  --color-gold-dark:       #E3CA7A;
+  --color-gold-light:      #E3CA7A;
 
-  --color-hero-overlay:    rgba(42, 24, 18, 0.42);
-  --color-card-overlay:    rgba(42, 24, 18, 0.55);
+  --color-hero-overlay:    rgba(106, 11, 34, 0.6);
+  --color-card-overlay:    rgba(106, 11, 34, 0.75);
 
   /* Typography */
   --font-display:          'Cormorant Garamond', 'Georgia', serif;

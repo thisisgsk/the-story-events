@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useStickyHeader } from '@/hooks/useStickyHeader';
 import styles from './Header.module.css';
@@ -48,8 +49,12 @@ export default function Header() {
         <div className={styles.inner}>
           {/* Logo */}
           <Link href="/" className={styles.logo} onClick={() => setMobileOpen(false)}>
-            <span className={styles.logoMain}>The Story Events</span>
-            <span className={styles.logoSub}>Luxury Wedding Planners</span>
+            <div className={styles.logoWhite}>
+              <Image src="/logo-white.png" alt="The Story Events" width={200} height={60} style={{ objectFit: 'contain' }} priority />
+            </div>
+            <div className={styles.logoMaroon}>
+              <Image src="/logo-maroon.png" alt="The Story Events" width={200} height={60} style={{ objectFit: 'contain' }} priority />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
