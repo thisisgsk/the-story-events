@@ -3,21 +3,18 @@ import Image from 'next/image';
 import styles from './Footer.module.css';
 
 const quickLinks = [
-  { label: 'Destination Weddings', href: '/destination-weddings' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Weddings & Events', href: '/weddings' },
-  { label: 'Our Philosophy', href: '/philosophy' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Contact & Enquire', href: '/contact' },
+  { label: 'Destination Specialists', href: '/destination-specialists' },
+  { label: 'Portfolio', href: '/portfolio' },
 ];
 
 const guideLinks = [
-  { label: 'Destination Guides', href: '/venues-guides/destinations' },
-  { label: 'Venue Guides', href: '/venues-guides/venues' },
-  { label: 'Wedding Checklist', href: '/venues-guides/planning-guides/destination-wedding-checklist' },
-  { label: 'How to Choose a Venue', href: '/venues-guides/planning-guides/how-to-choose-a-venue' },
-  { label: 'Wedding Timeline', href: '/venues-guides/planning-guides/wedding-timeline-planning' },
-  { label: 'Guest Hospitality Guide', href: '/venues-guides/planning-guides/guest-hospitality-guide' },
+  { label: 'Destinations', href: '/destinations' },
+  { label: 'Venues', href: '/venues' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Footer() {

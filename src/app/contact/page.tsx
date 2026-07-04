@@ -11,17 +11,18 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  destination: string;
   weddingDate: string;
   guestCount: string;
+  venue: string;
   budget: string;
-  destination: string;
-  weddingType: string;
+  functions: string;
   message: string;
 }
 
 const initialForm: FormData = {
-  name: '', email: '', phone: '', weddingDate: '',
-  guestCount: '', budget: '', destination: '', weddingType: '', message: '',
+  name: '', email: '', phone: '', destination: '', weddingDate: '',
+  guestCount: '', venue: '', budget: '', functions: '', message: '',
 };
 
 export default function ContactPage() {
@@ -97,9 +98,9 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className={styles.form} noValidate>
                     <div className={styles.formRow}>
                       <div className="form-group">
-                        <label className="form-label" htmlFor="name">Full Name *</label>
+                        <label className="form-label" htmlFor="name">Couple / Family Name *</label>
                         <input id="name" name="name" type="text" className="form-input" required
-                          placeholder="Your full name" value={form.name} onChange={handleChange} />
+                          placeholder="Your names" value={form.name} onChange={handleChange} />
                       </div>
                       <div className="form-group">
                         <label className="form-label" htmlFor="email">Email Address *</label>
@@ -115,9 +116,22 @@ export default function ContactPage() {
                           placeholder="+91 98XXX XXXXX" value={form.phone} onChange={handleChange} />
                       </div>
                       <div className="form-group">
-                        <label className="form-label" htmlFor="weddingDate">Expected Wedding Date</label>
-                        <input id="weddingDate" name="weddingDate" type="date" className="form-input"
-                          value={form.weddingDate} onChange={handleChange} />
+                        <label className="form-label" htmlFor="weddingDate">Wedding Date / Tentative Month</label>
+                        <input id="weddingDate" name="weddingDate" type="text" className="form-input"
+                          placeholder="e.g. November 2026" value={form.weddingDate} onChange={handleChange} />
+                      </div>
+                    </div>
+
+                    <div className={styles.formRow}>
+                      <div className="form-group">
+                        <label className="form-label" htmlFor="destination">Preferred Destination</label>
+                        <input id="destination" name="destination" type="text" className="form-input"
+                          placeholder="e.g. Udaipur, Goa, or Undecided" value={form.destination} onChange={handleChange} />
+                      </div>
+                      <div className="form-group">
+                        <label className="form-label" htmlFor="venue">Preferred Venue (if any)</label>
+                        <input id="venue" name="venue" type="text" className="form-input"
+                          placeholder="e.g. Taj Lake Palace" value={form.venue} onChange={handleChange} />
                       </div>
                     </div>
 
@@ -134,7 +148,7 @@ export default function ContactPage() {
                         </select>
                       </div>
                       <div className="form-group">
-                        <label className="form-label" htmlFor="budget">Budget Range (INR)</label>
+                        <label className="form-label" htmlFor="budget">Estimated Budget Range</label>
                         <select id="budget" name="budget" className="form-select" value={form.budget} onChange={handleChange}>
                           <option value="">Select range</option>
                           <option value="under-25l">Under ₹25 Lakhs</option>
@@ -146,35 +160,14 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className={styles.formRow}>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="destination">Destination of Interest</label>
-                        <select id="destination" name="destination" className="form-select" value={form.destination} onChange={handleChange}>
-                          <option value="">Select destination</option>
-                          <option value="udaipur">Udaipur</option>
-                          <option value="jaipur">Jaipur</option>
-                          <option value="goa">Goa</option>
-                          <option value="kerala">Kerala</option>
-                          <option value="hyderabad">Hyderabad</option>
-                          <option value="manali">Manali</option>
-                          <option value="open">Open to Suggestions</option>
-                        </select>
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="weddingType">Wedding Style</label>
-                        <select id="weddingType" name="weddingType" className="form-select" value={form.weddingType} onChange={handleChange}>
-                          <option value="">Select style</option>
-                          <option value="palace">Palace / Heritage</option>
-                          <option value="beach">Beach / Coastal</option>
-                          <option value="mountain">Mountain / Hill Station</option>
-                          <option value="intimate">Intimate / Micro Wedding</option>
-                          <option value="grand">Grand Celebration</option>
-                        </select>
-                      </div>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="functions">Functions Planned</label>
+                      <input id="functions" name="functions" type="text" className="form-input"
+                        placeholder="e.g. Mehendi, Sangeet, Wedding, Reception" value={form.functions} onChange={handleChange} />
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label" htmlFor="message">Tell Us Your Vision</label>
+                      <label className="form-label" htmlFor="message">Message / Wedding Vision</label>
                       <textarea id="message" name="message" className="form-textarea" rows={5}
                         placeholder="Describe your dream wedding — the mood, the aesthetic, the details that matter to you most..."
                         value={form.message} onChange={handleChange} />

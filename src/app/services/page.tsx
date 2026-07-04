@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { services } from '@/data/services';
 import ServicesHero from '@/components/services/ServicesHero/ServicesHero';
 import ServiceBlock from '@/components/services/ServiceBlock/ServiceBlock';
+import OurProcessTimeline from '@/components/destination-weddings/OurProcessTimeline/OurProcessTimeline';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import styles from './ServicesCta.module.css';
 
@@ -27,6 +28,8 @@ export default function ServicesPage() {
           index={i}
         />
       ))}
+
+      <OurProcessTimeline />
 
       {/* ── Final CTA ──────────────────────────────────────────────────────── */}
       <section className={styles.cta} aria-label="Contact us">
