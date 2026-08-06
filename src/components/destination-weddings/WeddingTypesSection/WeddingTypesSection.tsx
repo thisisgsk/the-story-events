@@ -1,10 +1,7 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
-import styles from './WeddingTypesSection.module.css';
 
 const types = [
   {
@@ -41,24 +38,33 @@ const types = [
 
 export default function WeddingTypesSection() {
   return (
-    <section className={`section ${styles.section}`}>
+    <section className="section bg-white">
       <div className="container">
         <AnimatedSection>
           <SectionHeading label="Wedding Styles" title="What Kind of Wedding Are You Dreaming Of?" centered />
         </AnimatedSection>
-        <div className={styles.grid}>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {types.map((type, i) => (
             <AnimatedSection key={type.slug} delay={i * 80}>
-              <div className={styles.card}>
-                <div className={styles.imgWrapper}>
-                  <Image src={type.image} alt={type.name} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw" style={{ objectFit: 'cover' }} />
-                  <div className={styles.overlay}>
-                    <p className={styles.desc}>{type.desc}</p>
-                    <Link href="/contact" className={styles.learnMore}>Begin Planning →</Link>
+              <div className="group rounded-lg overflow-hidden bg-primary shadow-md">
+                <div className="relative aspect-[2/3] overflow-hidden cursor-default">
+                  <Image
+                    src={type.image}
+                    alt={type.name}
+                    fill
+                    sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 20vw"
+                    style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-slow ease-in-out group-hover:scale-[1.08]"
+                  />
+                  <div className="absolute inset-0 z-[2] bg-[rgba(42,24,18,0.78)] flex flex-col justify-end p-6 gap-3 opacity-0 transition-opacity duration-[250ms] ease-in-out group-hover:opacity-100">
+                    <p className="text-[0.82rem] text-white/82 leading-[1.7]">{type.desc}</p>
+                    <Link href="/contact" className="font-label text-[0.62rem] tracking-[0.14em] uppercase text-accent no-underline transition-colors duration-150 ease-out hover:text-white">
+                      Begin Planning →
+                    </Link>
                   </div>
                 </div>
-                <div className={styles.cardLabel}>
-                  <h3 className={styles.cardName}>{type.name}</h3>
+                <div className="px-5 py-4">
+                  <h3 className="font-heading text-base font-semibold text-white">{type.name}</h3>
                 </div>
               </div>
             </AnimatedSection>

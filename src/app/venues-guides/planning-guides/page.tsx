@@ -4,7 +4,6 @@ import PageHero from '@/components/ui/PageHero/PageHero';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 import type { Metadata } from 'next';
-import styles from './planning-guides.module.css';
 
 export const metadata: Metadata = {
   title: 'Wedding Planning Guides | Checklists, Timelines & Expert Advice',
@@ -43,17 +42,17 @@ export default function PlanningGuidesPage() {
           <AnimatedSection>
             <SectionHeading label="Free Resources" title="The Story Events Planning Library" subtitle="Real advice from eight years of planning extraordinary destination weddings." centered />
           </AnimatedSection>
-          <div className={styles.grid}>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
             {allGuides.map((guide, i) => (
-              <AnimatedSection key={guide.slug} delay={i * 80} className={styles.cardWrap}>
-                <div className={styles.card}>
-                  <div className={styles.cardTop}>
-                    <span className={styles.category}>{guide.category}</span>
-                    <span className={styles.readTime}>{guide.readTime} read</span>
+              <AnimatedSection key={guide.slug} delay={i * 80} className="h-full">
+                <div className="bg-white border border-accent/40 rounded-xl p-7 h-full flex flex-col gap-3 transition-all duration-[250ms] ease-in-out hover:-translate-y-1 hover:shadow-lg">
+                  <div className="flex items-center justify-between">
+                    <span className="font-label text-[0.6rem] tracking-[0.14em] uppercase text-accent bg-cream px-2.5 py-[3px] rounded-full">{guide.category}</span>
+                    <span className="font-label text-[0.6rem] tracking-[0.08em] uppercase text-primary">{guide.readTime} read</span>
                   </div>
-                  <h2 className={styles.guideTitle}>{guide.title}</h2>
-                  <p className={styles.guideDesc}>{guide.desc}</p>
-                  <Link href={`/venues-guides/planning-guides/${guide.slug}`} className={styles.readLink}>Read Guide →</Link>
+                  <h2 className="font-heading text-xl font-semibold text-primary leading-[1.3]">{guide.title}</h2>
+                  <p className="text-sm text-primary leading-[1.7] flex-1">{guide.desc}</p>
+                  <Link href={`/venues-guides/planning-guides/${guide.slug}`} className="font-label text-[0.65rem] tracking-[0.12em] uppercase text-accent transition-colors duration-150 ease-out mt-auto no-underline">Read Guide →</Link>
                 </div>
               </AnimatedSection>
             ))}
@@ -61,12 +60,12 @@ export default function PlanningGuidesPage() {
         </div>
       </section>
 
-      <section className={styles.cta}>
+      <section className="bg-primary py-24 text-center">
         <div className="container">
           <AnimatedSection>
-            <p className={styles.ctaLabel}>Need More Help?</p>
-            <h2 className={styles.ctaTitle}>Planning is More Enjoyable With a Partner</h2>
-            <p className={styles.ctaSub}>Our guides can only take you so far. When you're ready for personalised, expert guidance — we're here.</p>
+            <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Need More Help?</p>
+            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold text-white mb-4">Planning is More Enjoyable With a Partner</h2>
+            <p className="text-lg text-white/60 max-w-[44ch] mx-auto mb-8 leading-[1.7]">Our guides can only take you so far. When you&apos;re ready for personalised, expert guidance — we&apos;re here.</p>
             <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
           </AnimatedSection>
         </div>

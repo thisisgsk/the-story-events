@@ -1,5 +1,4 @@
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
-import styles from './WhyStoryEvents.module.css';
 import Image from 'next/image';
 
 const reasons = [
@@ -19,36 +18,36 @@ const reasons = [
 
 export default function WhyStoryEvents() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          <AnimatedSection animation="slideRight" className={styles.imageCol}>
-            <div className={styles.imageWrapper}>
-              <Image 
-                src="/home-custom/img6.jpg" 
-                alt="Why The Story Events" 
+    <section className="py-24 bg-cream">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16">
+          <AnimatedSection animation="slideRight" className="relative w-full">
+            <div className="relative w-full aspect-[4/5] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/home-custom/img6.jpg"
+                alt="Why The Story Events"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
               />
             </div>
           </AnimatedSection>
-          
-          <div className={styles.contentCol}>
+
+          <div className="flex flex-col">
             <AnimatedSection animation="fadeUp">
               <span className="section-label">Our Approach</span>
               <h2 className="section-title">Why Story Events</h2>
-              
-              <div className={styles.reasonsList}>
+
+              <div className="mt-10 flex flex-col gap-8">
                 {reasons.map((reason, index) => (
-                  <AnimatedSection 
-                    key={index} 
-                    animation="fadeUp" 
+                  <AnimatedSection
+                    key={index}
+                    animation="fadeUp"
                     delay={index * 150}
-                    className={styles.reasonCard}
+                    className="border-l-2 border-accent pl-6"
                   >
-                    <h3 className={styles.reasonTitle}>{reason.title}</h3>
-                    <p className={styles.reasonDesc}>{reason.description}</p>
+                    <h3 className="font-display text-xl font-medium text-primary mb-2">{reason.title}</h3>
+                    <p className="font-body text-sm leading-[1.6] text-primary">{reason.description}</p>
                   </AnimatedSection>
                 ))}
               </div>

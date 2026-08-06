@@ -1,6 +1,5 @@
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
-import styles from './OurProcessTimeline.module.css';
 
 const steps = [
   { num: '01', title: 'Initial Consultation & Vision Mapping', desc: 'We begin with a warm, in-depth conversation — in person, on a video call, or over chai. We learn about your relationship, your vision, your must-haves, and the feeling you want your wedding to create.' },
@@ -13,7 +12,7 @@ const steps = [
 
 export default function OurProcessTimeline() {
   return (
-    <section className={`section ${styles.section}`}>
+    <section className="section bg-white">
       <div className="container">
         <AnimatedSection>
           <SectionHeading
@@ -23,16 +22,31 @@ export default function OurProcessTimeline() {
             centered
           />
         </AnimatedSection>
-        <div className={styles.timeline}>
+        <div className="flex flex-col gap-8 max-w-[800px] mx-auto">
           {steps.map((step, i) => (
-            <AnimatedSection key={step.num} delay={i * 100} animation={i % 2 === 0 ? 'slideLeft' : 'slideRight'} className={`${styles.step} ${i % 2 !== 0 ? styles.stepRight : ''}`}>
-              <div className={styles.connector}>
-                <div className={styles.numCircle}>{step.num}</div>
-                {i < steps.length - 1 && <div className={styles.line} />}
+            <AnimatedSection
+              key={step.num}
+              delay={i * 100}
+              animation={i % 2 === 0 ? 'slideLeft' : 'slideRight'}
+              className="flex gap-6 items-start"
+            >
+              <div className="flex flex-col items-center shrink-0">
+                <div
+                  className="w-[52px] h-[52px] rounded-full flex items-center justify-center font-display text-base font-bold text-white shrink-0 shadow-[0_4px_16px_rgba(196,149,106,0.3)]"
+                  style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))' }}
+                >
+                  {step.num}
+                </div>
+                {i < steps.length - 1 && (
+                  <div
+                    className="w-px flex-1 min-h-10 mt-2"
+                    style={{ backgroundImage: 'linear-gradient(to bottom, var(--color-accent), transparent)' }}
+                  />
+                )}
               </div>
-              <div className={styles.content}>
-                <h3 className={styles.title}>{step.title}</h3>
-                <p className={styles.desc}>{step.desc}</p>
+              <div className="pt-2 pb-4">
+                <h3 className="font-heading text-xl font-semibold text-primary mb-3">{step.title}</h3>
+                <p className="text-base text-primary leading-[1.8]">{step.desc}</p>
               </div>
             </AnimatedSection>
           ))}
