@@ -28,7 +28,7 @@ export default function WeddingGallery({ images }: WeddingGalleryProps) {
       <div className="container">
         <div className="text-center mb-10">
           <span className="inline-block font-label text-[0.68rem] tracking-[0.18em] uppercase text-accent mb-3">Gallery</span>
-          <h2 className="font-display text-[clamp(2rem,3.5vw,3rem)] font-semibold text-primary">The Wedding in Pictures</h2>
+          <h2 className="font-display text-[clamp(2rem,3.5vw,3rem)] font-bold text-primary">The Wedding in Pictures</h2>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
           {images.map((img, i) => (

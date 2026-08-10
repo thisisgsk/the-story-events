@@ -58,7 +58,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2 md:gap-16">
             <AnimatedSection animation="slideLeft">
               <span className="block font-label text-[0.65rem] tracking-[0.18em] uppercase text-accent mb-3">Overview</span>
-              <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-semibold text-primary mb-4">Why {dest.name}?</h2>
+              <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-bold text-primary mb-4">Why {dest.name}?</h2>
               <div className="flex items-center gap-3 mb-5">
                 <span className="block w-10 h-px bg-accent" />
                 <span className="text-primary text-[0.7rem] opacity-70">✦</span>
@@ -128,7 +128,7 @@ export default async function DestinationDetailPage({ params }: PageProps) {
         <div className="container">
           <AnimatedSection>
             <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Ready to Begin?</p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold text-white mb-8">Plan Your {dest.name} Wedding with Us</h2>
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-bold text-white mb-8">Plan Your {dest.name} Wedding with Us</h2>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link href="/contact" className="btn btn-primary">Enquire Now</Link>
               <Link href="/weddings" className="btn btn-secondary">See Our Work</Link>

@@ -66,7 +66,7 @@ export default function ServicesPage() {
           </AnimatedSection>
 
           <AnimatedSection animation="fadeUp" delay={100}>
-            <h2 className="font-display text-[clamp(1.875rem,5.5vw,3.75rem)] font-semibold text-cream leading-[1.1] tracking-[-0.015em] max-w-[18ch] mx-auto">
+            <h2 className="font-display text-[clamp(1.875rem,5.5vw,3.75rem)] font-bold text-cream leading-[1.1] tracking-[-0.015em] max-w-[18ch] mx-auto">
               Your Perfect Wedding<br />
               <em className="italic font-normal text-accent">Starts with a Conversation</em>
             </h2>

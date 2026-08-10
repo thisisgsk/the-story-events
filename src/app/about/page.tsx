@@ -78,7 +78,7 @@ export default function AboutPage() {
       <section className="bg-cream py-24 text-center border-t border-accent/40">
         <div className="container">
           <AnimatedSection>
-            <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-semibold text-primary mb-4">Ready to Meet Us?</h2>
+            <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-bold text-primary mb-4">Ready to Meet Us?</h2>
             <p className="text-lg text-primary max-w-[44ch] mx-auto mb-8 leading-[1.7]">We love getting to know the people behind the wedding. Let&apos;s have a conversation.</p>
             <Link href="/contact" className="btn btn-primary">Book a Consultation</Link>
           </AnimatedSection>

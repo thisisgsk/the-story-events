@@ -13,7 +13,7 @@ export default function FounderNote() {
           </AnimatedSection>
           <AnimatedSection animation="slideRight">
             <span className="block font-label text-[0.68rem] tracking-[0.18em] uppercase text-accent mb-3">A Note from Our Founder</span>
-            <h2 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-semibold text-primary mb-4">Why I Started The Story Events</h2>
+            <h2 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">Why I Started The Story Events</h2>
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-10 h-px bg-accent" />
               <span className="text-primary text-[0.72rem] opacity-70">✦</span>

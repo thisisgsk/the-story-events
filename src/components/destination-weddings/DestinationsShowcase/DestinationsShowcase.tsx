@@ -38,7 +38,7 @@ export default function DestinationsShowcase() {
                   />
                 </div>
                 <div className="relative z-[2] -mt-[100px] p-5">
-                  <h3 className="font-display text-[clamp(1.2rem,2.5vw,1.6rem)] font-semibold text-white mb-0.5">{dest.name}</h3>
+                  <h3 className="font-display text-[clamp(1.2rem,2.5vw,1.6rem)] font-bold text-white mb-0.5">{dest.name}</h3>
                   <p className="font-label text-[0.6rem] tracking-[0.12em] uppercase text-white/55">{dest.state}</p>
                   {i === 0 && <p className="text-[0.85rem] text-white/60 mt-2 italic">{dest.tagline}</p>}
                 </div>

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const sectionLabelClass = 'inline-block font-label text-[0.68rem] tracking-[0.18em] uppercase text-accent mb-3';
-const sectionTitleClass = 'font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold text-primary mb-4 leading-[1.15]';
+const sectionTitleClass = 'font-display text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold text-primary mb-4 leading-[1.15]';
 const bodyTextClass = 'text-lg leading-[1.85] text-primary max-w-[72ch]';
 
 function FloralDivider() {
@@ -66,7 +66,7 @@ export default async function WeddingCaseStudyPage({ params }: PageProps) {
             <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">{wedding.type} Wedding · {wedding.city}</span>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={200}>
-            <h1 className="font-display text-[clamp(3rem,6vw,5.5rem)] font-semibold text-white leading-[1.05] tracking-[0.02em] mb-4">{wedding.coupleName}</h1>
+            <h1 className="font-display text-[clamp(3rem,6vw,5.5rem)] font-bold text-white leading-[1.05] tracking-[0.02em] mb-4">{wedding.coupleName}</h1>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={400}>
             <p className="font-label text-[0.7rem] tracking-[0.15em] uppercase text-white/60 mb-2">{wedding.date}</p>
@@ -217,7 +217,7 @@ export default async function WeddingCaseStudyPage({ params }: PageProps) {
         <div className="container">
           <AnimatedSection>
             <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Your Story Awaits</p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold text-white mb-8 leading-[1.15]">Inspired? Let&apos;s Begin Planning Yours.</h2>
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-bold text-white mb-8 leading-[1.15]">Inspired? Let&apos;s Begin Planning Yours.</h2>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link href="/contact" className="btn btn-primary">Enquire Now</Link>
               <Link href="/weddings" className="btn btn-secondary">View More Weddings</Link>

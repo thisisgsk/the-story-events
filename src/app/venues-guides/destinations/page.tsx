@@ -72,7 +72,7 @@ export default function DestinationsPage() {
         <div className="container">
           <AnimatedSection>
             <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Not Sure Where to Start?</p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold text-white mb-4">Let Us Help You Choose</h2>
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-bold text-white mb-4">Let Us Help You Choose</h2>
             <p className="text-lg text-white/60 max-w-[44ch] mx-auto mb-8 leading-[1.7]">We know every destination intimately. Tell us your vision and we&apos;ll match you with the perfect setting.</p>
             <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
           </AnimatedSection>

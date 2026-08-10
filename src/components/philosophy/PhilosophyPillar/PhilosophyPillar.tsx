@@ -29,7 +29,7 @@ export default function PhilosophyPillar({ number, title, tagline, paragraphs, i
           </AnimatedSection>
           <AnimatedSection animation={reversed ? 'slideLeft' : 'slideRight'} className={reversed ? 'md:order-1' : ''}>
             <span className="block font-label text-[0.65rem] tracking-[0.18em] uppercase text-accent mb-3">Pillar {number}</span>
-            <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-semibold text-primary mb-3">{title}</h2>
+            <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-bold text-primary mb-3">{title}</h2>
             <p className="font-display italic text-xl text-primary mb-4">{tagline}</p>
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-10 h-px bg-accent" />

@@ -12,7 +12,7 @@ export default function CtaBanner() {
       <div className="relative z-[2] px-6 md:px-8 lg:px-12 xl:px-16 max-w-[700px] mx-auto">
         <AnimatedSection>
           <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Your Story Awaits</span>
-          <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.5rem)] font-semibold text-white leading-[1.1] mb-5">Your Wedding Deserves to Be Extraordinary</h2>
+          <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold text-white leading-[1.1] mb-5">Your Wedding Deserves to Be Extraordinary</h2>
           <p className="text-lg text-white/70 leading-[1.75] mb-10">One conversation. A lifetime of memories. Let&apos;s begin planning together.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/contact" className="btn btn-primary">Start Planning</Link>

@@ -267,7 +267,7 @@
   }
 
   .section-title {
-    @apply font-display font-semibold text-primary leading-[1.1] mb-4;
+    @apply font-display font-bold text-primary leading-[1.1] mb-4;
     font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
   }
 

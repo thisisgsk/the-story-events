@@ -26,7 +26,7 @@ export default function ServicesHero() {
       <div className="container relative z-[2] pb-16 pt-20 max-w-[1280px]">
         <span className="inline-block font-label text-xs font-medium tracking-[0.2em] uppercase text-accent mb-5 opacity-90">Our Services</span>
 
-        <h1 className="font-display text-[clamp(2.25rem,7vw,4.5rem)] font-semibold text-cream leading-[1.08] tracking-[-0.01em] mb-6">
+        <h1 className="font-display text-[clamp(2.25rem,7vw,4.5rem)] font-bold text-cream leading-[1.08] tracking-[-0.01em] mb-6">
           Every Detail,<br />
           <em className="italic font-normal text-accent">Perfectly Handled</em>
         </h1>
