@@ -1,40 +1,9 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Playfair_Display, Lato, Josefin_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB/WhatsAppFAB';
 import MotionProvider from '@/components/providers/MotionProvider';
-
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-  display: 'swap',
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const lato = Lato({
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  variable: '--font-body',
-  display: 'swap',
-});
-
-const josefinSans = Josefin_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-label',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -88,10 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${cormorantGaramond.variable} ${playfairDisplay.variable} ${lato.variable} ${josefinSans.variable}`}
-    >
+    <html lang="en">
       <body>
         <MotionProvider>
           <Header />

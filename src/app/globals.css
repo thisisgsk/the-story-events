@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Josefin+Sans:wght@300;400;500;600&display=swap');
 @import 'tailwindcss';
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -9,6 +10,11 @@
   --color-primary: #6a0b22;
   --color-accent: #e3ca7a;
   --color-cream: #f9f6ed;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-label: 'Josefin Sans', 'Arial', sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -25,15 +31,6 @@
   --animate-ken-burns: ken-burns 18s ease-out both;
   --animate-bounce-scroll-dot: bounce-scroll-dot 1.8s ease-in-out infinite;
   --animate-float: float 3s ease-in-out infinite;
-}
-
-/* Fonts come from next/font variables set on <html> (see layout.tsx) — `inline`
-   avoids Tailwind emitting a shadowed/redundant :root declaration for them. */
-@theme inline {
-  --font-display: var(--font-display);
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
-  --font-label: var(--font-label);
 }
 
 @keyframes ken-burns {
@@ -61,7 +58,7 @@
   }
 
   body {
-    font-family: var(--font-body), 'Helvetica Neue', sans-serif;
+    font-family: var(--font-body);
     font-size: var(--text-base);
     line-height: 1.7;
     color: var(--color-primary);
