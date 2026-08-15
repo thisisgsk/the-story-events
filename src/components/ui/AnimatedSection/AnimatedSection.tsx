@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import styles from './AnimatedSection.module.css';
+import { motion, type Variants } from 'motion/react';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -11,6 +10,29 @@ interface AnimatedSectionProps {
   threshold?: number;
 }
 
+const variants: Record<string, Variants> = {
+  fadeUp: {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fadeIn: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  },
+  slideLeft: {
+    hidden: { opacity: 0, x: -28 },
+    visible: { opacity: 1, x: 0 },
+  },
+  slideRight: {
+    hidden: { opacity: 0, x: 28 },
+    visible: { opacity: 1, x: 0 },
+  },
+  scaleIn: {
+    hidden: { opacity: 0, scale: 0.97 },
+    visible: { opacity: 1, scale: 1 },
+  },
+};
+
 export default function AnimatedSection({
   children,
   className = '',
@@ -18,37 +40,16 @@ export default function AnimatedSection({
   delay = 0,
   threshold = 0.12,
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold, rootMargin: '0px 0px -40px 0px' }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  const animClass = styles[animation] || styles.fadeUp;
-  const visibleClass = isVisible ? styles.visible : '';
-
   return (
-    <div
-      ref={ref}
-      className={`${styles.base} ${animClass} ${visibleClass} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+    <motion.div
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: threshold, margin: '0px 0px -40px 0px' }}
+      variants={variants[animation] ?? variants.fadeUp}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: delay / 1000 }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

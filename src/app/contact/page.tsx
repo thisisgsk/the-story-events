@@ -4,8 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
-import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
-import styles from './contact.module.css';
 
 interface FormData {
   name: string;
@@ -45,25 +43,28 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroBg}>
+      <section className="relative h-[60vh] min-h-[420px] flex items-center justify-center">
+        <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1800&q=80"
             alt="Contact The Story Events"
             fill priority sizes="100vw"
             style={{ objectFit: 'cover' }}
           />
-          <div className={styles.heroOverlay} />
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{ backgroundImage: 'linear-gradient(180deg, rgba(42,24,18,0.25) 0%, rgba(42,24,18,0.62) 100%)' }}
+          />
         </div>
-        <div className={styles.heroContent}>
+        <div className="relative z-[2] text-center px-6 md:px-8 lg:px-12 xl:px-16 pt-16 pb-8">
           <AnimatedSection animation="fadeIn">
-            <span className={styles.heroLabel}>Contact & Enquire</span>
+            <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Contact & Enquire</span>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={200}>
-            <h1 className={styles.heroTitle}>Let&apos;s Begin Planning<br />Your Story</h1>
+            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-semibold text-white leading-[1.1] mb-5">Let&apos;s Begin Planning<br />Your Story</h1>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={400}>
-            <p className={styles.heroSubtitle}>
+            <p className="text-lg text-white/75 max-w-[48ch] mx-auto leading-[1.7]">
               Share your vision with us. We&apos;ll respond within 24 hours with a personalised consultation.
             </p>
           </AnimatedSection>
@@ -71,32 +72,32 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Info */}
-      <section className={`section ${styles.mainSection}`}>
+      <section className="section bg-cream">
         <div className="container">
-          <div className={styles.grid}>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16 lg:items-start">
             {/* Lead Form */}
-            <div className={styles.formWrapper}>
+            <div>
               <AnimatedSection animation="slideLeft">
-                <div className={styles.formHeader}>
+                <div className="mb-8">
                   <span className="section-label">Enquire Now</span>
-                  <h2 className={styles.formTitle}>Tell Us About Your Dream Wedding</h2>
-                  <p className={styles.formSubtitle}>
+                  <h2 className="font-display text-[clamp(1.6rem,2.5vw,2.2rem)] font-semibold text-primary mb-3">Tell Us About Your Dream Wedding</h2>
+                  <p className="text-primary text-base leading-[1.7]">
                     The more detail you share, the better we can tailor our response to your vision.
                   </p>
                 </div>
 
                 {submitted ? (
-                  <div className={styles.successBox}>
-                    <div className={styles.successIcon}>✦</div>
-                    <h3>Thank You, {form.name.split(' ')[0]}!</h3>
-                    <p>We&apos;ve received your enquiry and will be in touch within 24 hours. In the meantime, feel free to browse our portfolio for inspiration.</p>
-                    <Link href="/weddings" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
+                  <div className="bg-cream border border-accent/40 rounded-xl px-8 py-12 text-center">
+                    <div className="text-[2.5rem] text-accent mb-5">✦</div>
+                    <h3 className="font-display text-3xl text-primary mb-3">Thank You, {form.name.split(' ')[0]}!</h3>
+                    <p className="text-primary leading-[1.75] max-w-[40ch] mx-auto">We&apos;ve received your enquiry and will be in touch within 24 hours. In the meantime, feel free to browse our portfolio for inspiration.</p>
+                    <Link href="/weddings" className="btn btn-primary mt-6">
                       Browse Weddings
                     </Link>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className={styles.form} noValidate>
-                    <div className={styles.formRow}>
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div className="form-group">
                         <label className="form-label" htmlFor="name">Couple / Family Name *</label>
                         <input id="name" name="name" type="text" className="form-input" required
@@ -109,7 +110,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className={styles.formRow}>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div className="form-group">
                         <label className="form-label" htmlFor="phone">Phone Number *</label>
                         <input id="phone" name="phone" type="tel" className="form-input" required
@@ -122,7 +123,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className={styles.formRow}>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div className="form-group">
                         <label className="form-label" htmlFor="destination">Preferred Destination</label>
                         <input id="destination" name="destination" type="text" className="form-input"
@@ -135,7 +136,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className={styles.formRow}>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div className="form-group">
                         <label className="form-label" htmlFor="guestCount">Estimated Guest Count</label>
                         <select id="guestCount" name="guestCount" className="form-select" value={form.guestCount} onChange={handleChange}>
@@ -173,7 +174,11 @@ export default function ContactPage() {
                         value={form.message} onChange={handleChange} />
                     </div>
 
-                    <button type="submit" className={`btn btn-primary ${styles.submitBtn}`} disabled={loading}>
+                    <button
+                      type="submit"
+                      className="btn btn-primary self-start min-w-[220px] justify-center mt-3 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                      disabled={loading}
+                    >
                       {loading ? 'Sending...' : 'Send My Enquiry ✦'}
                     </button>
                   </form>
@@ -182,16 +187,16 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info */}
-            <div className={styles.infoWrapper}>
+            <div>
               <AnimatedSection animation="slideRight" delay={150}>
-                <div className={styles.infoCard}>
-                  <h3 className={styles.infoTitle}>Get In Touch</h3>
+                <div className="bg-white border border-accent/40 rounded-xl p-8 mb-5 shadow-md">
+                  <h3 className="font-display text-2xl text-primary mb-8">Get In Touch</h3>
 
-                  <div className={styles.infoItem}>
-                    <div className={styles.infoIcon}>📍</div>
+                  <div className="flex gap-4 mb-6 items-start">
+                    <div className="text-[1.1rem] shrink-0 mt-0.5 text-accent">📍</div>
                     <div>
-                      <p className={styles.infoItemLabel}>Studio Address</p>
-                      <p className={styles.infoItemText}>
+                      <p className="font-label text-[0.62rem] tracking-[0.15em] uppercase text-primary mb-1">Studio Address</p>
+                      <p className="text-sm text-primary leading-[1.7]">
                         Level 4, Maker Maxity<br />
                         Bandra Kurla Complex<br />
                         Mumbai, Maharashtra 400051
@@ -199,27 +204,27 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className={styles.infoItem}>
-                    <div className={styles.infoIcon}>📞</div>
+                  <div className="flex gap-4 mb-6 items-start">
+                    <div className="text-[1.1rem] shrink-0 mt-0.5 text-accent">📞</div>
                     <div>
-                      <p className={styles.infoItemLabel}>Phone</p>
-                      <a href="tel:+919820000000" className={styles.infoItemText}>+91 98200 00000</a>
+                      <p className="font-label text-[0.62rem] tracking-[0.15em] uppercase text-primary mb-1">Phone</p>
+                      <a href="tel:+919820000000" className="text-sm text-primary leading-[1.7] no-underline transition-colors duration-150 ease-out hover:text-accent">+91 98200 00000</a>
                     </div>
                   </div>
 
-                  <div className={styles.infoItem}>
-                    <div className={styles.infoIcon}>✉</div>
+                  <div className="flex gap-4 mb-6 items-start">
+                    <div className="text-[1.1rem] shrink-0 mt-0.5 text-accent">✉</div>
                     <div>
-                      <p className={styles.infoItemLabel}>Email</p>
-                      <a href="mailto:hello@thestoryevents.com" className={styles.infoItemText}>hello@thestoryevents.com</a>
+                      <p className="font-label text-[0.62rem] tracking-[0.15em] uppercase text-primary mb-1">Email</p>
+                      <a href="mailto:hello@thestoryevents.com" className="text-sm text-primary leading-[1.7] no-underline transition-colors duration-150 ease-out hover:text-accent">hello@thestoryevents.com</a>
                     </div>
                   </div>
 
-                  <div className={styles.infoItem}>
-                    <div className={styles.infoIcon}>🕐</div>
+                  <div className="flex gap-4 items-start">
+                    <div className="text-[1.1rem] shrink-0 mt-0.5 text-accent">🕐</div>
                     <div>
-                      <p className={styles.infoItemLabel}>Studio Hours</p>
-                      <p className={styles.infoItemText}>Monday – Saturday<br />10:00 AM – 7:00 PM IST</p>
+                      <p className="font-label text-[0.62rem] tracking-[0.15em] uppercase text-primary mb-1">Studio Hours</p>
+                      <p className="text-sm text-primary leading-[1.7]">Monday – Saturday<br />10:00 AM – 7:00 PM IST</p>
                     </div>
                   </div>
                 </div>
@@ -229,20 +234,21 @@ export default function ContactPage() {
                   href="https://wa.me/919820000000?text=Hello%2C%20I%27d%20love%20to%20enquire%20about%20planning%20my%20wedding."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.whatsappCta}
+                  className="flex items-center gap-4 rounded-lg px-6 py-5 no-underline mb-5 transition-all duration-150 ease-out shadow-[0_4px_16px_rgba(37,211,102,0.25)] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(37,211,102,0.35)]"
+                  style={{ backgroundImage: 'linear-gradient(135deg, #25D366, #128C7E)' }}
                 >
-                  <span className={styles.whatsappIcon}>💬</span>
+                  <span className="text-[1.6rem] shrink-0">💬</span>
                   <div>
-                    <p className={styles.whatsappTitle}>Prefer to WhatsApp?</p>
-                    <p className={styles.whatsappSub}>Chat with our concierge team instantly</p>
+                    <p className="font-heading text-base font-semibold text-white">Prefer to WhatsApp?</p>
+                    <p className="text-xs text-white/75 mt-0.5">Chat with our concierge team instantly</p>
                   </div>
-                  <span className={styles.whatsappArrow}>→</span>
+                  <span className="ml-auto text-white text-[1.2rem] shrink-0">→</span>
                 </a>
 
                 {/* Response Promise */}
-                <div className={styles.promise}>
-                  <span className={styles.promiseIcon}>✦</span>
-                  <p>We respond to every enquiry within <strong>24 hours</strong>, personally — not with an automated reply.</p>
+                <div className="flex gap-3 items-start p-4 bg-cream rounded-md border border-accent/40">
+                  <span className="text-accent text-[0.85rem] shrink-0 mt-[3px]">✦</span>
+                  <p className="text-sm text-primary leading-[1.65]">We respond to every enquiry within <strong>24 hours</strong>, personally — not with an automated reply.</p>
                 </div>
               </AnimatedSection>
             </div>
@@ -251,11 +257,13 @@ export default function ContactPage() {
       </section>
 
       {/* Map Placeholder */}
-      <section className={styles.mapSection}>
-        <div className={styles.mapPlaceholder}>
-          <div className={styles.mapOverlay}>
-            <div className={styles.mapPin}>📍</div>
-            <p className={styles.mapText}>The Story Events Studio<br />Bandra Kurla Complex, Mumbai</p>
+      <section>
+        <div
+          className="h-[320px] bg-cream relative flex items-center justify-center overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&q=60')] before:bg-cover before:bg-center before:opacity-[0.08]"
+        >
+          <div className="relative text-center z-[1]">
+            <div className="text-[3rem] mb-3">📍</div>
+            <p className="font-heading text-lg text-primary font-medium leading-[1.5]">The Story Events Studio<br />Bandra Kurla Complex, Mumbai</p>
           </div>
         </div>
       </section>

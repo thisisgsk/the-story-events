@@ -1,6 +1,5 @@
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
-import styles from './WhatWeManageSection.module.css';
 
 const areas = [
   { icon: '🏰', title: 'Venue & Logistics', desc: 'Scouting, booking, and managing every aspect of your venue across multiple days and events.' },
@@ -15,7 +14,7 @@ const areas = [
 
 export default function WhatWeManageSection() {
   return (
-    <section className={`section ${styles.section}`}>
+    <section className="section bg-cream">
       <div className="container">
         <AnimatedSection>
           <SectionHeading
@@ -25,13 +24,13 @@ export default function WhatWeManageSection() {
             centered
           />
         </AnimatedSection>
-        <div className={styles.grid}>
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
           {areas.map((area, i) => (
-            <AnimatedSection key={area.title} delay={i * 60} className={styles.cardWrap}>
-              <div className={styles.card}>
-                <span className={styles.icon}>{area.icon}</span>
-                <h3 className={styles.title}>{area.title}</h3>
-                <p className={styles.desc}>{area.desc}</p>
+            <AnimatedSection key={area.title} delay={i * 60} className="h-full">
+              <div className="bg-white border border-accent/40 rounded-lg p-6 h-full flex flex-col gap-3 transition-all duration-[250ms] ease-in-out hover:-translate-y-1 hover:shadow-lg">
+                <span className="text-[1.6rem]">{area.icon}</span>
+                <h3 className="font-heading text-base font-semibold text-primary">{area.title}</h3>
+                <p className="text-sm text-primary leading-[1.65]">{area.desc}</p>
               </div>
             </AnimatedSection>
           ))}

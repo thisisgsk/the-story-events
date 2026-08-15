@@ -3,6 +3,7 @@ import './globals.css';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB/WhatsAppFAB';
+import MotionProvider from '@/components/providers/MotionProvider';
 
 export const metadata: Metadata = {
   title: {
@@ -58,10 +59,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFAB />
+        <MotionProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppFAB />
+        </MotionProvider>
       </body>
     </html>
   );

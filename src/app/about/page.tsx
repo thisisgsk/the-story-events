@@ -6,7 +6,6 @@ import FounderNote from '@/components/about/FounderNote/FounderNote';
 import PhilosophyPillar from '@/components/philosophy/PhilosophyPillar/PhilosophyPillar';
 import WhatMakesUsDifferent from '@/components/about/WhatMakesUsDifferent/WhatMakesUsDifferent';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
-import styles from './about.module.css';
 
 const pillars = [
   {
@@ -53,8 +52,8 @@ export default function AboutPage() {
       <FounderNote />
       
       {/* Planning Philosophy merged from old route */}
-      <section style={{ paddingTop: 'var(--space-20)' }}>
-        <div className="container" style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
+      <section className="pt-20">
+        <div className="container text-center mb-16">
           <AnimatedSection>
             <span className="section-label">Our Philosophy</span>
             <h2 className="section-title">The Foundation of Our Work</h2>
@@ -76,11 +75,11 @@ export default function AboutPage() {
       <WhatMakesUsDifferent />
 
       {/* Mini CTA */}
-      <section className={styles.miniCta}>
+      <section className="bg-cream py-24 text-center border-t border-accent/40">
         <div className="container">
           <AnimatedSection>
-            <h2 className={styles.ctaTitle}>Ready to Meet Us?</h2>
-            <p className={styles.ctaSubtitle}>We love getting to know the people behind the wedding. Let&apos;s have a conversation.</p>
+            <h2 className="font-display text-[clamp(2rem,3.5vw,2.8rem)] font-semibold text-primary mb-4">Ready to Meet Us?</h2>
+            <p className="text-lg text-primary max-w-[44ch] mx-auto mb-8 leading-[1.7]">We love getting to know the people behind the wedding. Let&apos;s have a conversation.</p>
             <Link href="/contact" className="btn btn-primary">Book a Consultation</Link>
           </AnimatedSection>
         </div>
