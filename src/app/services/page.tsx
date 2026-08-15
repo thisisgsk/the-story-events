@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/data/services';
-import ServicesHero from '@/components/services/ServicesHero/ServicesHero';
+import ServicesCover from '@/components/services/ServicesCover/ServicesCover';
+import ServicesHeadline from '@/components/services/ServicesHeadline/ServicesHeadline';
 import ServiceBlock from '@/components/services/ServiceBlock/ServiceBlock';
 import OurProcessTimeline from '@/components/destination-weddings/OurProcessTimeline/OurProcessTimeline';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <ServicesHero />
+      <ServicesCover />
+      <ServicesHeadline />
 
       {/* All service blocks — alternating layout */}
       {services.map((service, i) => (
