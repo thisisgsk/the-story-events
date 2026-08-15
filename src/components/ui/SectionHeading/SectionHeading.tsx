@@ -23,7 +23,7 @@ export default function SectionHeading({
         </span>
       )}
       <h2
-        className={`font-display text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.01em] mb-4 ${
+        className={`font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.1] tracking-[-0.01em] mb-4 ${
           light ? 'text-white' : 'text-primary'
         }`}
       >

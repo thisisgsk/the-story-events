@@ -39,7 +39,7 @@ export default function HeroSection() {
         </motion.span>
 
         <motion.h1
-          className="font-display text-[clamp(3rem,7vw,6rem)] font-bold text-white leading-[1.06] tracking-[-0.01em] mb-6"
+          className="font-display text-[clamp(3rem,7vw,6rem)] font-semibold text-white leading-[1.06] tracking-[-0.01em] mb-6"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: luxuryEase, delay: 0.65 }}

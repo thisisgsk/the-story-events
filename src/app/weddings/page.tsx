@@ -35,7 +35,7 @@ export default function WeddingsPage() {
             <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Our Portfolio</span>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={200}>
-            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-bold text-white leading-[1.1] mb-5">Weddings We&apos;ve Had the<br />Honour of Planning</h1>
+            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-semibold text-white leading-[1.1] mb-5">Weddings We&apos;ve Had the<br />Honour of Planning</h1>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={400}>
             <p className="text-lg text-white/75 max-w-[50ch] mx-auto leading-[1.7]">

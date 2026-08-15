@@ -34,7 +34,7 @@ export default function DestinationsPreview() {
                   />
                 </div>
                 <div className="relative z-[2] -mt-20 p-4">
-                  <h3 className="font-display text-xl font-bold text-white leading-[1.15]">{dest.name}</h3>
+                  <h3 className="font-display text-xl font-semibold text-white leading-[1.15]">{dest.name}</h3>
                   <p className="font-label text-[0.6rem] tracking-[0.12em] uppercase text-white/55 mt-0.5">{dest.state}</p>
                 </div>
               </Link>

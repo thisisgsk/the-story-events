@@ -12,7 +12,7 @@ export default function EnquiryCTABanner() {
       <div className="relative z-[2] px-6 md:px-8 lg:px-12 xl:px-16 max-w-[700px] mx-auto">
         <AnimatedSection>
           <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Your Story Begins Here</span>
-          <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-bold text-white leading-[1.12] mb-5">Ready to Begin Planning Your Destination Wedding?</h2>
+          <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold text-white leading-[1.12] mb-5">Ready to Begin Planning Your Destination Wedding?</h2>
           <p className="text-lg text-white/70 leading-[1.75] mb-10">Let&apos;s have an honest conversation about your vision. No pressure — just genuine guidance from people who love what they do.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/contact" className="btn btn-primary">Enquire Now</Link>

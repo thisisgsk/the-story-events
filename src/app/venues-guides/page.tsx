@@ -60,7 +60,7 @@ export default function VenuesGuidesPage() {
             <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Resource Hub</span>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={200}>
-            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-bold text-white leading-[1.1] mb-4">Venues & Planning Guides</h1>
+            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-semibold text-white leading-[1.1] mb-4">Venues & Planning Guides</h1>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={400}>
             <p className="text-lg text-white/75 max-w-[50ch] mx-auto leading-[1.7]">
@@ -146,7 +146,7 @@ export default function VenuesGuidesPage() {
                     />
                   </div>
                   <div className="relative z-[2] -mt-16 p-4">
-                    <h3 className="font-display text-xl font-bold text-white leading-[1.2]">{dest.name}</h3>
+                    <h3 className="font-display text-xl font-semibold text-white leading-[1.2]">{dest.name}</h3>
                     <p className="font-label text-[0.62rem] tracking-[0.1em] uppercase text-white/65">{dest.state}</p>
                   </div>
                 </Link>
@@ -161,7 +161,7 @@ export default function VenuesGuidesPage() {
         <div className="container">
           <AnimatedSection>
             <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Ready to Begin?</p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-bold text-white mb-5">Let Our Experts Guide You</h2>
+            <h2 className="font-display text-[clamp(2rem,4vw,3.2rem)] font-semibold text-white mb-5">Let Our Experts Guide You</h2>
             <p className="text-lg text-white/60 max-w-[50ch] mx-auto mb-8 leading-[1.7]">The right destination and venue for your wedding depends on your vision, guest count, and budget. Let us help you find the perfect match.</p>
             <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
           </AnimatedSection>

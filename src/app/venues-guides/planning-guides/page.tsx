@@ -64,7 +64,7 @@ export default function PlanningGuidesPage() {
         <div className="container">
           <AnimatedSection>
             <p className="font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Need More Help?</p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-white mb-4">Planning is More Enjoyable With a Partner</h2>
+            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold text-white mb-4">Planning is More Enjoyable With a Partner</h2>
             <p className="text-lg text-white/60 max-w-[44ch] mx-auto mb-8 leading-[1.7]">Our guides can only take you so far. When you&apos;re ready for personalised, expert guidance — we&apos;re here.</p>
             <Link href="/contact" className="btn btn-primary">Book a Free Consultation</Link>
           </AnimatedSection>

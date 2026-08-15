@@ -61,7 +61,7 @@ export default function ContactPage() {
             <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Contact & Enquire</span>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={200}>
-            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-bold text-white leading-[1.1] mb-5">Let&apos;s Begin Planning<br />Your Story</h1>
+            <h1 className="font-display text-[clamp(2.2rem,5vw,4rem)] font-semibold text-white leading-[1.1] mb-5">Let&apos;s Begin Planning<br />Your Story</h1>
           </AnimatedSection>
           <AnimatedSection animation="fadeUp" delay={400}>
             <p className="text-lg text-white/75 max-w-[48ch] mx-auto leading-[1.7]">
@@ -80,7 +80,7 @@ export default function ContactPage() {
               <AnimatedSection animation="slideLeft">
                 <div className="mb-8">
                   <span className="section-label">Enquire Now</span>
-                  <h2 className="font-display text-[clamp(1.6rem,2.5vw,2.2rem)] font-bold text-primary mb-3">Tell Us About Your Dream Wedding</h2>
+                  <h2 className="font-display text-[clamp(1.6rem,2.5vw,2.2rem)] font-semibold text-primary mb-3">Tell Us About Your Dream Wedding</h2>
                   <p className="text-primary text-base leading-[1.7]">
                     The more detail you share, the better we can tailor our response to your vision.
                   </p>

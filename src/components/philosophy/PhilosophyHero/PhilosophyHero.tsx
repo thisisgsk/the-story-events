@@ -21,7 +21,7 @@ export default function PhilosophyHero() {
         <span className="inline-block font-label text-xs font-medium tracking-[0.2em] uppercase text-accent mb-5 px-5 py-2 border border-accent/50 rounded-full">
           The Story Events Way
         </span>
-        <h1 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-bold text-white leading-[1.08] tracking-[-0.01em] mb-6 [text-shadow:0_2px_24px_rgba(42,24,18,0.35)]">
+        <h1 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] font-semibold text-white leading-[1.08] tracking-[-0.01em] mb-6 [text-shadow:0_2px_24px_rgba(42,24,18,0.35)]">
           Five Pillars of Our Philosophy
         </h1>
         <p className="font-body text-[clamp(1rem,2vw,1.25rem)] text-white/88 leading-[1.75] max-w-[60ch] mx-auto mb-8">

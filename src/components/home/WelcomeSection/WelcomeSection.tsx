@@ -13,7 +13,7 @@ export default function WelcomeSection() {
         <AnimatedSection>
           <div className="mb-8">
             <span className="inline-block font-label text-[0.68rem] tracking-[0.2em] uppercase text-accent mb-4">Welcome</span>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold text-primary leading-[1.15]">
+            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold text-primary leading-[1.15]">
               Every Wedding is a Story.<br />
               <em className="italic text-primary font-normal">We Make Yours Extraordinary.</em>
             </h2>
