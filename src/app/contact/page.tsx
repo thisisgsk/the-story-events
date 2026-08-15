@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
@@ -23,8 +23,13 @@ const initialForm: FormData = {
   guestCount: '', venue: '', budget: '', functions: '', message: '',
 };
 
-export default function ContactPage() {
-  const [form, setForm] = useState<FormData>(initialForm);
+interface ContactPageProps {
+  searchParams: Promise<{ destination?: string }>;
+}
+
+export default function ContactPage({ searchParams }: ContactPageProps) {
+  const { destination } = use(searchParams);
+  const [form, setForm] = useState<FormData>({ ...initialForm, destination: destination ?? '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
