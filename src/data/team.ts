@@ -57,35 +57,42 @@ export const brandTimeline = [
     year: '2016',
     title: 'The Beginning',
     description: 'Nisha Kapoor launches The Story Events from a small studio in Mumbai, planning 3 weddings in the first year with a team of 2.',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
   },
   {
     year: '2018',
     title: 'First Palace Wedding',
     description: "The agency plans its first destination wedding at Udaipur's City Palace. The wedding earns a feature in Vogue India's Wedding Edition.",
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
   },
   {
     year: '2019',
     title: 'Expansion to Jaipur & Goa',
     description: 'Opens operational bases in Jaipur and Goa. Team grows to 12. Plans 25 weddings across the year.',
+    image: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=400&q=80',
   },
   {
     year: '2021',
     title: 'Pivoting Through the Pandemic',
     description: 'Adapts to micro-wedding formats. Pioneers the intimate 40-guest luxury experience that becomes a signature offering.',
+    image: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80',
   },
   {
     year: '2022',
     title: 'South India Expansion',
     description: 'Expands to Kerala and Hyderabad. First Falaknuma Palace wedding puts the agency on national radar.',
+    image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80',
   },
   {
     year: '2023',
     title: 'Award-Winning Year',
     description: "Named India's Best Destination Wedding Planner by WeddingWire. Plans 40 weddings. Team of 18.",
+    image: 'https://images.unsplash.com/photo-1608889476561-6242cfdbf622?w=400&q=80',
   },
   {
     year: '2024',
     title: 'Centenary Milestone',
     description: 'Plans the 100th wedding — a mountain ceremony in Manali. Launches The Story Events Way philosophy.',
+    image: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=400&q=80',
   },
 ];
