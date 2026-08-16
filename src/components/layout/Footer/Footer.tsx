@@ -10,8 +10,9 @@ const quickLinks = [
 ];
 
 const guideLinks = [
-  { label: 'Destinations', href: '/destinations' },
-  { label: 'Venues', href: '/venues' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Venues', href: '/locations?view=venues' },
+  { label: 'Planning Guides', href: '/planning-guides' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
 ];

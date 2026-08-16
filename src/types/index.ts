@@ -52,39 +52,8 @@ export interface Service {
   icon: string;
 }
 
-// ─── Destination Types ─────────────────────────────────────────────────────────
-export interface Destination {
-  slug: string;
-  name: string;
-  tagline: string;
-  state: string;
-  heroImage: string;
-  thumbnailImage: string;
-  description: string;
-  highlights: string[];
-  bestSeason: string;
-  travelTip: string;
-  venues: string[];
-}
-
-// ─── Venue Guide Types ─────────────────────────────────────────────────────────
-export interface VenueGuide {
-  slug: string;
-  type: string;
-  title: string;
-  description: string;
-  heroImage: string;
-  venues: VenueListing[];
-}
-
-export interface VenueListing {
-  name: string;
-  location: string;
-  capacity: string;
-  image: string;
-  description: string;
-  highlights: string[];
-}
+// ─── Destination & Venue Types ────────────────────────────────────────────────
+// Live in @/types/locations — they back the merged /locations page.
 
 // ─── Planning Guide Types ──────────────────────────────────────────────────────
 export interface PlanningGuide {

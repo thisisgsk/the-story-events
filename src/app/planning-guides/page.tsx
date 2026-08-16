@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { planningGuides } from '@/data/destinations';
+import { planningGuides } from '@/data/planningGuides';
 import PageHero from '@/components/ui/PageHero/PageHero';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
@@ -52,7 +52,7 @@ export default function PlanningGuidesPage() {
                   </div>
                   <h2 className="font-heading text-xl font-semibold text-primary leading-[1.3]">{guide.title}</h2>
                   <p className="text-sm text-primary leading-[1.7] flex-1">{guide.desc}</p>
-                  <Link href={`/venues-guides/planning-guides/${guide.slug}`} className="font-label text-[0.65rem] tracking-[0.12em] uppercase text-accent transition-colors duration-150 ease-out mt-auto no-underline">Read Guide →</Link>
+                  <Link href={`/planning-guides/${guide.slug}`} className="font-label text-[0.65rem] tracking-[0.12em] uppercase text-accent transition-colors duration-150 ease-out mt-auto no-underline">Read Guide →</Link>
                 </div>
               </AnimatedSection>
             ))}
