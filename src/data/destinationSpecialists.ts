@@ -1,4 +1,4 @@
-import { getDestinationBySlug } from './destinations';
+import { getDestinationBySlug } from './locations';
 
 // ─── Featured Destination Cards ────────────────────────────────────────────────
 export interface FeaturedDestinationCard {

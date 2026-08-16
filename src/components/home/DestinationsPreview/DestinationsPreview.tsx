@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { destinations } from '@/data/destinations';
+import { operatingDestinations } from '@/data/locations';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 
 export default function DestinationsPreview() {
-  const top = destinations.slice(0, 5);
+  const top = operatingDestinations.slice(0, 5);
   return (
     <section className="section bg-primary">
       <div className="container">
@@ -16,7 +16,7 @@ export default function DestinationsPreview() {
           {top.map((dest, i) => (
             <AnimatedSection key={dest.slug} delay={i * 80}>
               <Link
-                href={`/venues-guides/destinations/${dest.slug}`}
+                href={`/locations?destination=${dest.slug}`}
                 className="group block no-underline rounded-lg overflow-hidden transition-all duration-[250ms] ease-in-out hover:-translate-y-[5px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
               >
                 <div className="relative aspect-[2/3] overflow-hidden">
@@ -35,7 +35,7 @@ export default function DestinationsPreview() {
                 </div>
                 <div className="relative z-[2] -mt-20 p-4">
                   <h3 className="font-display text-xl font-semibold text-white leading-[1.15]">{dest.name}</h3>
-                  <p className="font-label text-[0.6rem] tracking-[0.12em] uppercase text-white/55 mt-0.5">{dest.state}</p>
+                  <p className="font-label text-[0.6rem] tracking-[0.12em] uppercase text-white/55 mt-0.5">{dest.locationLabel}</p>
                 </div>
               </Link>
             </AnimatedSection>
@@ -43,7 +43,7 @@ export default function DestinationsPreview() {
         </div>
         <AnimatedSection delay={500} className="text-center">
           <Link
-            href="/venues-guides/destinations"
+            href="/locations"
             className="font-label text-[0.72rem] tracking-[0.14em] uppercase text-white/60 no-underline transition-colors duration-150 ease-out hover:text-accent"
           >
             Explore All Destinations →

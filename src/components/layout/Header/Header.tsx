@@ -13,8 +13,7 @@ const navItems = [
   { label: 'Services', href: '/services' },
   { label: 'Destination Specialists', href: '/destination-specialists' },
   { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Destinations', href: '/destinations' },
-  { label: 'Venues', href: '/venues' },
+  { label: 'Locations', href: '/locations' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
 ];
