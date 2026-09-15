@@ -13,7 +13,7 @@ export default function AboutCoverHero() {
         transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=2000&q=80"
+          src="/images/hero/about-hero.png"
           alt="The Story Events team"
           fill
           priority
