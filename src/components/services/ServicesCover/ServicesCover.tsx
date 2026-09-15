@@ -33,7 +33,7 @@ export default function ServicesCover() {
         {/* Scroll-linked parallax + continuous Ken Burns zoom */}
         <motion.div className="absolute inset-0" style={{ y: imageY, scale: imageScale }}>
           <Image
-            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1800&q=80"
+            src="/images/hero/services-hero.png"
             alt="Elegant wedding ceremony setup with lush floral arrangements"
             fill
             priority
