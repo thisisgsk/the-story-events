@@ -104,12 +104,6 @@ export default function ServicesPage() {
               </Link>
             </div>
           </AnimatedSection>
-
-          <AnimatedSection animation="fadeIn" delay={500}>
-            <p className="flex items-center gap-3 mt-6 font-label text-xs tracking-[0.12em] uppercase text-white/42 before:content-[''] before:flex-1 before:max-w-[80px] before:h-px before:bg-white/15 after:content-[''] after:flex-1 after:max-w-[80px] after:h-px after:bg-white/15">
-              Trusted by 200+ couples across India &amp; the world
-            </p>
-          </AnimatedSection>
         </div>
       </section>
     </>

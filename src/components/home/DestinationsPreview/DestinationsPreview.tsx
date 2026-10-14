@@ -1,28 +1,40 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { operatingDestinations } from '@/data/locations';
+import { getDestinationBySlug } from '@/data/locations';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 
+const thumb = (slug: string) => getDestinationBySlug(slug)!.thumbnailImage;
+const unsplash = (id: string) => `https://images.unsplash.com/${id}?w=900&q=80`;
+
+// India, UAE and Thailand open /destinations filtered by country. Sri Lanka and
+// Vietnam have no destination data yet, so they open the unfiltered page.
+const tiles = [
+  { name: 'India', href: '/destinations?country=India', image: thumb('udaipur') },
+  { name: 'UAE', href: '/destinations?country=United%20Arab%20Emirates', image: thumb('dubai') },
+  { name: 'Sri Lanka', href: '/destinations', image: unsplash('photo-1581420455310-e069c4d4529e') },
+  { name: 'Thailand', href: '/destinations?country=Thailand', image: thumb('phuket') },
+  { name: 'Vietnam', href: '/destinations', image: unsplash('photo-1634951412593-b2cdca1ae519') },
+];
+
 export default function DestinationsPreview() {
-  const top = operatingDestinations.slice(0, 5);
   return (
     <section className="section bg-primary">
       <div className="container">
         <AnimatedSection>
-          <SectionHeading label="Where We Plan" title="India's Most Breathtaking Wedding Destinations" light centered />
+          <SectionHeading label="Where We Plan" title="India and beyond" light centered />
         </AnimatedSection>
         <div className="grid grid-cols-2 gap-3 mb-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
-          {top.map((dest, i) => (
-            <AnimatedSection key={dest.slug} delay={i * 80}>
+          {tiles.map((tile, i) => (
+            <AnimatedSection key={tile.name} delay={i * 80}>
               <Link
-                href={`/locations?destination=${dest.slug}`}
+                href={tile.href}
                 className="group block no-underline rounded-lg overflow-hidden transition-all duration-[250ms] ease-in-out hover:-translate-y-[5px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
               >
                 <div className="relative aspect-[2/3] overflow-hidden">
                   <Image
-                    src={dest.thumbnailImage}
-                    alt={dest.name}
+                    src={tile.image}
+                    alt={tile.name}
                     fill
                     sizes="(max-width:640px) 50vw,(max-width:1024px) 33vw,20vw"
                     style={{ objectFit: 'cover' }}
@@ -34,8 +46,7 @@ export default function DestinationsPreview() {
                   />
                 </div>
                 <div className="relative z-[2] -mt-20 p-4">
-                  <h3 className="font-display text-xl font-semibold text-white leading-[1.15]">{dest.name}</h3>
-                  <p className="font-label text-[0.6rem] tracking-[0.12em] uppercase text-white/55 mt-0.5">{dest.locationLabel}</p>
+                  <h3 className="font-display text-xl font-semibold text-white leading-[1.15]">{tile.name}</h3>
                 </div>
               </Link>
             </AnimatedSection>
@@ -43,7 +54,7 @@ export default function DestinationsPreview() {
         </div>
         <AnimatedSection delay={500} className="text-center">
           <Link
-            href="/locations"
+            href="/destinations"
             className="font-label text-[0.72rem] tracking-[0.14em] uppercase text-white/60 no-underline transition-colors duration-150 ease-out hover:text-accent"
           >
             Explore All Destinations →

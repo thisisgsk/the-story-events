@@ -1,11 +1,5 @@
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 
-const pillars = [
-  { icon: '✦', label: 'Destinations Across India', value: '8 States' },
-  { icon: '◈', label: 'Weddings Planned', value: '100+' },
-  { icon: '❋', label: 'Years of Excellence', value: '7+' },
-];
-
 export default function WelcomeSection() {
   return (
     <section className="section bg-white text-center">
@@ -36,18 +30,6 @@ export default function WelcomeSection() {
             <p className="text-lg leading-[1.85] text-primary mb-5">
               Our promise is simple: on your wedding day, all you feel is joy. We will have handled everything else.
             </p>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection delay={300}>
-          <div className="grid grid-cols-3 gap-4 pt-8 border-t border-accent/40 max-[480px]:grid-cols-1 max-[480px]:gap-6">
-            {pillars.map((p) => (
-              <div key={p.label} className="flex flex-col items-center gap-2 p-6 bg-cream rounded-lg">
-                <span className="text-[1.4rem] text-accent">{p.icon}</span>
-                <strong className="font-display text-3xl font-bold text-primary">{p.value}</strong>
-                <span className="font-label text-[0.65rem] tracking-[0.12em] uppercase text-primary">{p.label}</span>
-              </div>
-            ))}
           </div>
         </AnimatedSection>
       </div>

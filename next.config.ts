@@ -10,20 +10,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // The separate Destinations and Venues sections were merged into /locations.
-  // Old paths keep working, carrying their browsing intent across.
+  // Destination Specialists, Locations, Venues and the old venues-guides pages were
+  // all merged into /destinations. Old paths keep working, carrying their browsing
+  // intent across (query strings are passed through automatically).
   async redirects() {
     return [
-      { source: '/destinations', destination: '/locations', permanent: true },
-      { source: '/venues', destination: '/locations?view=venues', permanent: true },
-      { source: '/venues-guides', destination: '/locations', permanent: true },
-      { source: '/venues-guides/destinations', destination: '/locations', permanent: true },
+      { source: '/locations', destination: '/destinations', permanent: true },
+      { source: '/destination-specialists', destination: '/destinations', permanent: true },
+      { source: '/venues', destination: '/destinations?view=venues', permanent: true },
+      { source: '/venues-guides', destination: '/destinations', permanent: true },
+      { source: '/venues-guides/destinations', destination: '/destinations', permanent: true },
       {
         source: '/venues-guides/destinations/:slug',
-        destination: '/locations?view=venues&destination=:slug',
+        destination: '/destinations?view=venues&destination=:slug',
         permanent: true,
       },
-      { source: '/venues-guides/venues', destination: '/locations?view=venues', permanent: true },
+      { source: '/venues-guides/venues', destination: '/destinations?view=venues', permanent: true },
       { source: '/venues-guides/planning-guides', destination: '/planning-guides', permanent: true },
       {
         source: '/venues-guides/planning-guides/:slug',

@@ -2,18 +2,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Destination Specialists', href: '/destination-specialists' },
+  { label: 'Destinations', href: '/destinations' },
   { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Blog', href: '/blog' },
 ];
 
-const guideLinks = [
-  { label: 'Locations', href: '/locations' },
-  { label: 'Venues', href: '/locations?view=venues' },
-  { label: 'Planning Guides', href: '/planning-guides' },
-  { label: 'Blog', href: '/blog' },
+const companyLinks = [
+  { label: 'About', href: '/about' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
@@ -51,11 +47,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Resources */}
+        {/* Company */}
         <div>
-          <p className="font-label text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-white/85 mb-5">Resources</p>
+          <p className="font-label text-[0.65rem] font-semibold tracking-[0.18em] uppercase text-white/85 mb-5">Company</p>
           <div className="flex flex-col gap-3">
-            {guideLinks.map((link) => (
+            {companyLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm text-white/50 no-underline transition-colors duration-150 ease-out leading-[1.4] hover:text-accent">
                 {link.label}
               </Link>

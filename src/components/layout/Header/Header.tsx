@@ -7,15 +7,13 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'motion/react';
 import { useStickyHeader } from '@/hooks/useStickyHeader';
 
+// Home is the logo; Contact is the "Enquire Now" button.
 const navItems = [
-  { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Destination Specialists', href: '/destination-specialists' },
+  { label: 'Destinations', href: '/destinations' },
   { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Locations', href: '/locations' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contact Us', href: '/contact' },
 ];
 
 const hamburgerLineTransforms = [
@@ -78,7 +76,6 @@ export default function Header() {
                       ? 'text-primary hover:text-accent hover:bg-cream'
                       : 'text-white/90 hover:text-white hover:bg-white/10'
                   }`}
-                  onClick={item.href === '/' ? handleHomeClick : undefined}
                 >
                   {item.label}
                 </Link>
@@ -134,13 +131,7 @@ export default function Header() {
                     href={item.href}
                     className="font-display font-medium text-white/85 tracking-[0.02em] py-3 transition-colors duration-150 ease-out text-center w-full block hover:text-accent"
                     style={{ fontSize: 'clamp(1.5rem, 5vw, 2.2rem)' }}
-                    onClick={(e) => {
-                      if (item.href === '/') {
-                        handleHomeClick(e);
-                      } else {
-                        setMobileOpen(false);
-                      }
-                    }}
+                    onClick={() => setMobileOpen(false)}
                   >
                     {item.label}
                   </Link>

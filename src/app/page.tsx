@@ -4,7 +4,6 @@ import DestinationsPreview from '@/components/home/DestinationsPreview/Destinati
 import ServicesPreview from '@/components/home/ServicesPreview/ServicesPreview';
 import WelcomeSection from '@/components/home/WelcomeSection/WelcomeSection';
 import PortfolioPreview from '@/components/home/PortfolioPreview/PortfolioPreview';
-import WhyStoryEvents from '@/components/home/WhyStoryEvents/WhyStoryEvents';
 import CtaBanner from '@/components/home/CtaBanner/CtaBanner';
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default function HomePage() {
       <ServicesPreview />
       <WelcomeSection />
       <PortfolioPreview />
-      <WhyStoryEvents />
       <CtaBanner />
     </>
   );

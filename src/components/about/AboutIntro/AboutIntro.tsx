@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 
-const headlineWords = ['Our', 'Story,', 'Our', 'Promise'];
+const headlineWords = ['Hello,', "we're", 'The', 'Story', 'Events'];
 
 export default function AboutIntro() {
   return (
@@ -35,14 +35,11 @@ export default function AboutIntro() {
         </div>
 
         <AnimatedSection className="max-w-[760px] mx-auto text-center" animation="fadeUp">
-          <p className="text-xl leading-[1.85] text-primary mb-6">
-            Meet the team that transforms wedding dreams into extraordinary, lived realities.
-          </p>
+          <p className="text-xl leading-[1.85] text-primary mb-6">We plan weddings, and we love doing it.</p>
           <p className="text-base leading-[1.9] text-primary/80">
-            The Story Events was founded on a simple belief: that a wedding is not an event to be managed, but a
-            story to be told. For eight years, we have brought that belief to palaces in Udaipur, beaches in Goa,
-            and mountaintops in Manali — planning every detail so that our couples remember nothing but joy. This
-            is the story of how we got here, the people who built it, and the promise that guides everything we do.
+            We started in 2018 as a wedding consultancy and have grown one chapter at a time — planning,
+            production, catering and styling, and now destinations beyond India. [ADD: a personal line, in your own
+            words, about why you do this]
           </p>
         </AnimatedSection>
       </div>

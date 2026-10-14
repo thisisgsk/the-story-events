@@ -9,10 +9,7 @@ interface RollingNumberProps {
   duration?: number;
 }
 
-/**
- * Counts from the previous value to the next one every time it changes — unlike
- * AnimatedCounter, which fires once when scrolled into view.
- */
+/** Counts from the previous value to the next one every time it changes. */
 export default function RollingNumber({ value, className = '', duration = 0.45 }: RollingNumberProps) {
   const [display, setDisplay] = useState(value);
   const previous = useRef(value);

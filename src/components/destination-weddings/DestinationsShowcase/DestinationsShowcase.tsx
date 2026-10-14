@@ -18,7 +18,7 @@ export default function DestinationsShowcase() {
               delay={i * 80}
               className={i === 0 ? 'col-span-2 row-span-1 md:col-span-2 md:row-span-2' : ''}
             >
-              <Link href={`/locations?destination=${dest.slug}`} className="group block no-underline rounded-lg overflow-hidden h-full">
+              <Link href={`/destinations?destination=${dest.slug}`} className="group block no-underline rounded-lg overflow-hidden h-full">
                 <div
                   className={`relative overflow-hidden ${
                     i === 0 ? 'aspect-square md:aspect-auto md:min-h-full md:h-[420px]' : 'aspect-[4/3]'
@@ -48,7 +48,7 @@ export default function DestinationsShowcase() {
         </div>
         <AnimatedSection delay={400} className="text-center">
           <Link
-            href="/locations"
+            href="/destinations"
             className="font-label text-[0.72rem] tracking-[0.14em] uppercase text-white/55 no-underline transition-colors duration-150 ease-out hover:text-accent"
           >
             Explore All Destinations →

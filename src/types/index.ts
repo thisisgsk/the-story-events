@@ -53,7 +53,7 @@ export interface Service {
 }
 
 // ─── Destination & Venue Types ────────────────────────────────────────────────
-// Live in @/types/locations — they back the merged /locations page.
+// Live in @/types/locations — they back the merged /destinations page.
 
 // ─── Planning Guide Types ──────────────────────────────────────────────────────
 export interface PlanningGuide {
@@ -79,11 +79,10 @@ export interface TeamMember {
   superpower: string;
 }
 
-// ─── Stats Types ───────────────────────────────────────────────────────────────
-export interface Stat {
-  value: string;
-  label: string;
-  icon?: string;
+export interface TimelineItem {
+  year: string;
+  title: string;
+  detail?: string;
 }
 
 // ─── Nav Types ────────────────────────────────────────────────────────────────
