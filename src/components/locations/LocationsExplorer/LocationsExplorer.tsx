@@ -38,6 +38,7 @@ import ViewToggle from '../ViewToggle/ViewToggle';
 interface LocationsExplorerProps {
   initialView: BrowseView;
   initialDestination: string | null;
+  initialCountry: string | null;
   initialNetwork: NetworkFilter;
 }
 
@@ -47,6 +48,7 @@ const luxuryEase = [0.16, 1, 0.3, 1] as const;
 export default function LocationsExplorer({
   initialView,
   initialDestination,
+  initialCountry,
   initialNetwork,
 }: LocationsExplorerProps) {
   const [view, setView] = useState<BrowseView>(initialView);
@@ -56,6 +58,7 @@ export default function LocationsExplorer({
     ...EMPTY_FILTERS,
     network: initialNetwork,
     destinations: initialDestination ? [initialDestination] : [],
+    countries: initialCountry ? [initialCountry] : [],
   }));
   // The slider updates on every pointer move; the committed filter lags behind it.
   const [capacityDraft, setCapacityDraft] = useState<CapacityRange>(EMPTY_FILTERS.capacity);

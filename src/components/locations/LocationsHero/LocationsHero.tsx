@@ -3,17 +3,11 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { destinations, venues } from '@/data/locations';
+import { destinations } from '@/data/locations';
 
 const luxuryEase = [0.16, 1, 0.3, 1] as const;
 
 const titleWords = ['Every', 'Destination.', 'Every', 'Venue.'];
-
-const stats = [
-  { value: destinations.filter((d) => d.isOperating).length, label: 'Core Destinations' },
-  { value: venues.length, label: 'Curated Venues' },
-  { value: new Set(destinations.map((d) => d.country)).size, label: 'Countries' },
-];
 
 /** Names scrolling behind the hero — a quiet reminder of the breadth on offer. */
 const marquee = [...destinations.map((d) => d.name), ...destinations.map((d) => d.name)];
@@ -35,7 +29,7 @@ export default function LocationsHero() {
     <section
       ref={sectionRef}
       className="relative h-[100svh] min-h-[620px] w-full overflow-hidden flex items-center justify-center"
-      aria-label="Locations hero"
+      aria-label="Destinations hero"
     >
       {/* Curtain reveal on load */}
       <motion.div
@@ -91,7 +85,7 @@ export default function LocationsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.45 }}
         >
-          Locations
+          Destinations
         </motion.span>
 
         <h1 className="font-display text-[clamp(2.6rem,6.4vw,5.4rem)] font-semibold text-white leading-[1.06] tracking-[-0.01em] mb-6">
@@ -117,24 +111,6 @@ export default function LocationsHero() {
           Browse the cities we know intimately — then browse every property we can open for you,
           including the ones far outside our own map.
         </motion.p>
-
-        <motion.div
-          className="flex gap-8 sm:gap-12 justify-center flex-wrap"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: luxuryEase, delay: 1.2 }}
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center gap-1">
-              <span className="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-semibold text-accent leading-none">
-                {stat.value}
-              </span>
-              <span className="font-label text-[0.6rem] tracking-[0.16em] uppercase text-white/55">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       <motion.a

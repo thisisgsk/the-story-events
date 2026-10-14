@@ -1,85 +1,115 @@
 'use client';
 
-import Image from 'next/image';
-import { motion } from 'motion/react';
+import { useRef, useSyncExternalStore } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react';
 import { brandTimeline } from '@/data/team';
+import type { TimelineItem } from '@/types';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 
+const DESKTOP_QUERY = '(min-width: 768px)';
+
+const subscribeToDesktop = (onChange: () => void) => {
+  const query = window.matchMedia(DESKTOP_QUERY);
+  query.addEventListener('change', onChange);
+  return () => query.removeEventListener('change', onChange);
+};
+
+const useIsDesktop = () =>
+  useSyncExternalStore(subscribeToDesktop, () => window.matchMedia(DESKTOP_QUERY).matches, () => false);
+
 export default function BrandTimeline() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+
+  // The spine fills down to a fixed line 60% of the way down the viewport; each
+  // milestone lights its dot as it crosses that same line.
+  const { scrollYProgress } = useScroll({
+    target: trackRef,
+    offset: ['start 0.6', 'end 0.6'],
+  });
+
   return (
-    <section className="section bg-white overflow-hidden">
+    <section className="section bg-primary overflow-hidden" aria-label="Our journey">
       <div className="container">
         <AnimatedSection>
-          <SectionHeading
-            label="Our Journey"
-            title="The Story Events Story"
-            subtitle="Eight years. One hundred weddings. One unwavering commitment to excellence."
-            centered
-          />
+          <SectionHeading label="Our Journey" title="How We Got Here" light centered />
         </AnimatedSection>
 
-        <div className="relative max-w-[1000px] mx-auto">
-          <motion.div
-            className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 origin-top"
-            style={{ backgroundImage: 'linear-gradient(to bottom, var(--color-accent), var(--color-primary), var(--color-accent))' }}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          />
-
-          <div className="flex flex-col gap-14 md:gap-20">
-            {brandTimeline.map((item, i) => {
-              const isLeft = i % 2 === 0;
-              const badgeColor = isLeft ? 'var(--color-accent)' : 'var(--color-primary)';
-
-              return (
-                <div key={item.year} className="relative grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-16">
-                  <AnimatedSection
-                    animation={isLeft ? 'slideRight' : 'slideLeft'}
-                    delay={i * 60}
-                    className={isLeft ? 'md:order-1 md:text-right md:pr-6' : 'md:order-2 md:pl-6'}
-                  >
-                    <span
-                      className="font-display text-[clamp(1.6rem,3vw,2.2rem)] font-bold leading-none mb-2 inline-block"
-                      style={{ color: badgeColor }}
-                    >
-                      {item.year}
-                    </span>
-                    <h3 className="font-heading text-xl font-semibold text-primary mb-2">{item.title}</h3>
-                    <p className="text-sm text-primary/80 leading-[1.75]">{item.description}</p>
-                  </AnimatedSection>
-
-                  <AnimatedSection
-                    animation="scaleIn"
-                    delay={i * 60 + 150}
-                    className={`flex ${isLeft ? 'md:order-2 md:justify-start md:pl-6' : 'md:order-1 md:justify-end md:pr-6'} justify-center`}
-                  >
-                    <div
-                      className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden shadow-lg border-4"
-                      style={{ borderColor: badgeColor }}
-                    >
-                      <Image src={item.image} alt={item.title} fill sizes="112px" style={{ objectFit: 'cover' }} />
-                    </div>
-                  </AnimatedSection>
-
-                  <motion.div
-                    className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full items-center justify-center text-white font-label text-xs font-bold shadow-md z-10"
-                    style={{ backgroundColor: badgeColor }}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true, amount: 0.6 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: (i * 60 + 100) / 1000 }}
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </motion.div>
-                </div>
-              );
-            })}
+        <div ref={trackRef} className="relative max-w-[1000px] mx-auto">
+          <div
+            className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-px md:-translate-x-1/2 bg-white/15"
+            aria-hidden="true"
+          >
+            <motion.div
+              className="absolute inset-0 origin-top bg-accent"
+              style={{ scaleY: reduceMotion ? 1 : scrollYProgress }}
+            />
           </div>
+
+          <ol className="flex flex-col gap-20 py-6 md:gap-32">
+            {brandTimeline.map((item, i) => (
+              <Milestone key={item.year} item={item} side={i % 2 === 0 ? 'left' : 'right'} />
+            ))}
+          </ol>
         </div>
       </div>
     </section>
+  );
+}
+
+function Milestone({ item, side }: { item: TimelineItem; side: 'left' | 'right' }) {
+  const ref = useRef<HTMLLIElement>(null);
+  const reduceMotion = useReducedMotion();
+  const isDesktop = useIsDesktop();
+
+  // 0 → 1 as the milestone travels from the bottom of the screen to the spine's fill line.
+  const { scrollYProgress: enter } = useScroll({ target: ref, offset: ['start 0.92', 'start 0.6'] });
+  // 0 → 1 as the milestone passes through the whole viewport — drives the year's parallax.
+  const { scrollYProgress: pass } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+
+  const fromX = isDesktop ? (side === 'left' ? -56 : 56) : 0;
+  const opacity = useTransform(enter, [0, 1], [0, 1]);
+  const x = useTransform(enter, [0, 1], [fromX, 0]);
+  const y = useTransform(enter, [0, 1], [32, 0]);
+  const yearY = useTransform(pass, [0, 1], [8, -20]);
+  const dotScale = useTransform(enter, [0.85, 1], [0, 1]);
+
+  const isLeft = side === 'left';
+
+  return (
+    <li ref={ref} className="relative md:grid md:grid-cols-2 md:gap-x-20">
+      <span
+        className="absolute left-[15px] md:left-1/2 top-[1.6rem] -translate-x-1/2 z-10 block w-4 h-4 rounded-full border border-accent/60 bg-primary"
+        aria-hidden="true"
+      >
+        <motion.span
+          className="absolute inset-[3px] rounded-full bg-accent"
+          style={{ scale: reduceMotion ? 1 : dotScale }}
+        />
+      </span>
+
+      {!isLeft && <div className="hidden md:block" />}
+
+      <motion.div
+        className={`pl-12 md:pl-0 ${isLeft ? 'md:text-right' : ''}`}
+        style={reduceMotion ? undefined : { opacity, x, y }}
+      >
+        <motion.span
+          className="block font-display text-[clamp(3.25rem,8vw,6rem)] font-semibold leading-none text-accent"
+          style={reduceMotion ? undefined : { y: yearY }}
+        >
+          {item.year}
+        </motion.span>
+        <h3 className="font-heading text-xl md:text-2xl font-semibold text-white mt-5">{item.title}</h3>
+        {item.detail && (
+          <p className={`text-sm md:text-base text-white/70 leading-[1.75] mt-2 max-w-[34ch] ${isLeft ? 'md:ml-auto' : ''}`}>
+            {item.detail}
+          </p>
+        )}
+      </motion.div>
+
+      {isLeft && <div className="hidden md:block" />}
+    </li>
   );
 }

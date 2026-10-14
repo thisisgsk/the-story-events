@@ -1,5 +1,5 @@
 // ─── Locations: shared vocabulary ─────────────────────────────────────────────
-// One data model backing both browsing modes on /locations. Destinations are the
+// One data model backing both browsing modes on /destinations. Destinations are the
 // cities we operate in (plus aspirational ones we plan on request); Venues are
 // the individual properties, in or outside our operating footprint.
 
