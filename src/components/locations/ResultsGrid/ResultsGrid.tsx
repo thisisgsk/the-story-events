@@ -1,33 +1,25 @@
 'use client';
 
 import { AnimatePresence, motion } from 'motion/react';
-import type { BrowseView, Destination, Venue } from '@/types/locations';
-import DestinationCard from '../DestinationCard/DestinationCard';
-import VenueCard from '../VenueCard/VenueCard';
 
 interface ResultsGridProps {
-  view: BrowseView;
-  destinations: Destination[];
-  venues: Venue[];
-  onSelectDestination: (slug: string) => void;
+  items: { key: string; node: React.ReactNode }[];
+  /** Grid column classes. Defaults to the card grid (1 / 2 / 3 columns). */
+  className?: string;
 }
 
 const luxuryEase = [0.16, 1, 0.3, 1] as const;
 
-/** Cap the stagger so a 40-card reshuffle never crawls. */
+/** Cap the stagger so a big reshuffle never crawls. */
 const enterDelay = (index: number) => Math.min(index, 10) * 0.045;
 
-export default function ResultsGrid({ view, destinations, venues, onSelectDestination }: ResultsGridProps) {
-  const items: { key: string; node: React.ReactNode }[] =
-    view === 'destinations'
-      ? destinations.map((d) => ({
-          key: `d-${d.slug}`,
-          node: <DestinationCard destination={d} onSelect={onSelectDestination} />,
-        }))
-      : venues.map((v) => ({ key: `v-${v.slug}`, node: <VenueCard venue={v} /> }));
-
+/** Animated grid: items fade/scale in, and the rest glide into place when the filter changes. */
+export default function ResultsGrid({
+  items,
+  className = 'grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3',
+}: ResultsGridProps) {
   return (
-    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+    <div className={className}>
       <AnimatePresence mode="popLayout" initial={false}>
         {items.map((item, i) => (
           <motion.div

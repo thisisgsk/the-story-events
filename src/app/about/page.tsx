@@ -3,7 +3,7 @@ import AboutCoverHero from '@/components/about/AboutCoverHero/AboutCoverHero';
 import AboutIntro from '@/components/about/AboutIntro/AboutIntro';
 import BrandTimeline from '@/components/about/BrandTimeline/BrandTimeline';
 import FounderNote from '@/components/about/FounderNote/FounderNote';
-import PartnerLogos from '@/components/about/PartnerLogos/PartnerLogos';
+import PartnerLogos from '@/components/ui/PartnerLogos/PartnerLogos';
 import CtaBanner from '@/components/home/CtaBanner/CtaBanner';
 
 export const metadata: Metadata = {

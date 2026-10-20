@@ -53,7 +53,7 @@ export interface Service {
 }
 
 // ─── Destination & Venue Types ────────────────────────────────────────────────
-// Live in @/types/locations — they back the merged /destinations page.
+// Live in @/types/destinations — they back the /destinations Country → City → Venue pages.
 
 // ─── Planning Guide Types ──────────────────────────────────────────────────────
 export interface PlanningGuide {
