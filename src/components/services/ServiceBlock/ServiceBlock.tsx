@@ -77,21 +77,23 @@ export default function ServiceBlock({
 
             <p className="font-body text-base text-primary leading-[1.8] mb-8 max-w-[58ch]">{service.description}</p>
 
-            {/* Features list */}
-            <ul className="flex flex-col gap-3 mb-10" aria-label={`Features of ${service.title}`}>
-              {service.features.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3 font-body text-sm text-primary leading-[1.55] group/feature">
-                  <span
-                    className="shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-[0.6rem] font-bold mt-0.5 shadow-[0_2px_6px_rgba(184,120,90,0.3)] transition-all duration-150 ease-out group-hover/feature:scale-[1.15] group-hover/feature:shadow-[0_3px_10px_rgba(184,120,90,0.45)]"
-                    style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))' }}
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Features list — optional per service */}
+            {service.features && service.features.length > 0 && (
+              <ul className="flex flex-col gap-3 mb-10" aria-label={`Features of ${service.title}`}>
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3 font-body text-sm text-primary leading-[1.55] group/feature">
+                    <span
+                      className="shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-[0.6rem] font-bold mt-0.5 shadow-[0_2px_6px_rgba(184,120,90,0.3)] transition-all duration-150 ease-out group-hover/feature:scale-[1.15] group-hover/feature:shadow-[0_3px_10px_rgba(184,120,90,0.45)]"
+                      style={{ backgroundImage: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))' }}
+                      aria-hidden="true"
+                    >
+                      ✓
+                    </span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <Link href="/contact" className="btn btn-outline self-start min-w-[240px] justify-center">
               Enquire About This Service

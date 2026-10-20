@@ -23,7 +23,7 @@ export default function ServicesPreview() {
                 <div className="text-[1.8rem] text-accent">{svc.icon}</div>
                 <h3 className="font-heading text-xl font-semibold text-primary">{svc.title}</h3>
                 <p className="font-display italic text-base text-primary">{svc.tagline}</p>
-                <p className="text-sm text-primary leading-[1.7] flex-1">{svc.description.slice(0, 130)}…</p>
+                <p className="text-sm text-primary leading-[1.7] flex-1">{svc.description}</p>
                 <Link href="/services" className="font-label text-[0.68rem] tracking-[0.12em] uppercase text-accent transition-colors duration-150 ease-out mt-auto">
                   Learn More →
                 </Link>
