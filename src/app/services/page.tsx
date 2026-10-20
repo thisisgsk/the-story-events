@@ -9,9 +9,9 @@ import OurProcessTimeline from '@/components/destination-weddings/OurProcessTime
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
 
 export const metadata: Metadata = {
-  title: 'Wedding Planning Services | Décor, Coordination & Vendor Management | The Story Events',
+  title: 'Wedding Planning Services | Venues, Décor, Hospitality & Entertainment',
   description:
-    'Discover seven bespoke destination wedding services — full planning, décor design, venue shortlisting, guest experience, vendor management, and day-of execution. One seamless luxury experience for your perfect wedding.',
+    'Discover eleven destination wedding services — venue sourcing, planning and concept development, hospitality, guest travel, décor, food and beverage, entertainment, ceremonies, stationery, and photography. One seamless experience for your perfect wedding.',
 };
 
 export default function ServicesPage() {

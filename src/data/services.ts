@@ -2,93 +2,102 @@ import type { Service } from '@/types';
 
 export const services: Service[] = [
   {
-    id: 'destination-wedding-planning',
-    title: 'Destination Wedding Planning',
-    tagline: 'Full Turnkey Management, Anywhere in the World',
+    id: 'destination-selection-venue-sourcing',
+    title: 'Destination Selection & Venue Sourcing',
+    tagline: 'Finding Your Perfect Setting',
     description:
-      'Our flagship offering. We take complete ownership of your destination wedding — from the first location scouting call to the final guest farewell. You bring the vision; we bring the team, the expertise, and the relentless attention to detail that transforms a beautiful idea into an unforgettable reality across days, venues, and hundreds of moving pieces.',
-    features: [
-      'Multi-day event architecture and scheduling',
-      'Legal compliance and ceremony documentation support',
-      'Weather contingency and crisis management planning',
-      'Day-of shadow team for complete couple peace of mind'
-    ],
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80',
+      'We help you compare destinations and shortlist venues that fit your vision, guest count, and budget, so the setting you choose feels right from the very first visit.',
+    image: '/images/services/destination-selection-venue-sourcing.jpg',
     icon: '✦',
   },
   {
-    id: 'venue-discovery',
-    title: 'Venue Discovery & Shortlisting',
-    tagline: 'Finding Your Perfect Canvas',
+    id: 'wedding-planning-concept-development',
+    title: 'Wedding Planning & Concept Development',
+    tagline: 'From First Idea to Final Plan',
     description:
-      'The right venue sets the tone for everything that follows. We leverage our extensive network and deep industry knowledge to uncover hidden gems, exclusive private estates, and luxury hotels that align perfectly with your aesthetic, capacity requirements, and budget.',
-    features: [
-      'Comprehensive venue research and presentation',
-      'Accompanied site visits and venue walkthroughs',
-      'Contract negotiation and clause review',
-      'Space planning and capacity optimization'
-    ],
-    image: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&q=80',
+      'We turn your ideas into a clear wedding concept and plan, shaping the story, style, and schedule of your celebration so every detail works together.',
+    image: '/images/services/wedding-planning-concept-development.jpg',
     icon: '◈',
   },
   {
-    id: 'wedding-design-decor',
-    title: 'Wedding Design & Décor',
-    tagline: 'Artful, Bespoke, Experiential Environments',
+    id: 'hotel-hospitality-management',
+    title: 'Hotel & Hospitality Management',
+    tagline: 'Comfort for Every Guest',
     description:
-      "Our in-house design team creates wedding environments that are deeply personal and visually extraordinary. From an intimate ceremony in a heritage courtyard to a grand ballroom reception, every space we design tells your story through colour, texture, light, and scent. We never repeat designs.",
-    features: [
-      'Custom concept development and mood boarding',
-      'Floral design — from bouquets to large-scale installations',
-      'Lighting design — ambient, architectural, and dramatic',
-      'Sustainable décor sourcing and post-event restoration'
-    ],
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=80',
+      'We coordinate accommodation for you and your guests, from room arrangements and check-ins to the small touches that help everyone feel looked after.',
+    image: '/images/services/hotel-hospitality-management.jpg',
     icon: '❋',
   },
   {
-    id: 'guest-hospitality',
-    title: 'Guest Hospitality Management',
-    tagline: 'White-Glove Treatment for Every Attendee',
+    id: 'guest-travel-logistics',
+    title: 'Guest Travel & Logistics',
+    tagline: 'Every Journey, Considered',
     description:
-      'We believe that true luxury lies in how a guest feels from the moment they arrive. Our dedicated hospitality team manages every aspect of your guests\' journey, ensuring they feel anticipated, welcomed, and deeply cared for throughout the celebrations.',
-    features: [
-      'RSVP tracking and guest communication',
-      'Flight logistics and airport transfer coordination',
-      'Welcome hampers and personalized itineraries',
-      'Dedicated hospitality desk and 24/7 guest concierge'
-    ],
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80',
+      'We plan how your guests get there and get around, coordinating travel arrangements, transfers, and schedules so everyone arrives relaxed and on time.',
+    image: '/images/services/guest-travel-logistics.jpg',
     icon: '✧',
   },
   {
-    id: 'vendor-management',
-    title: 'Vendor Management',
-    tagline: 'Curating the Best in the Business',
+    id: 'wedding-design-decor',
+    title: 'Wedding Design & Decor',
+    tagline: 'Spaces That Tell Your Story',
     description:
-      'We work exclusively with trusted, premium vendors across the globe. From sourcing Michelin-star caterers to booking world-class entertainment, we handle all vendor communications, negotiations, and briefings, ensuring everyone is aligned with your vision.',
-    features: [
-      'Vendor sourcing, vetting, and recommendations',
-      'Contract review and payment schedule management',
-      'Detailed vendor briefing documents',
-      'Technical rider fulfillment for entertainment'
-    ],
-    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80',
+      'We design the look and feel of your celebration, from ceremony settings to reception tables, with florals, lighting, and styling shaped around your story.',
+    image: '/images/services/wedding-design-decor.jpg',
     icon: '❖',
   },
   {
-    id: 'logistics-production',
-    title: 'Logistics & Production',
-    tagline: 'The Invisible Backbone of Your Wedding',
+    id: 'food-beverage-experiences',
+    title: 'Food & Beverage Experiences',
+    tagline: 'Dining Worth Celebrating',
     description:
-      'Great design is nothing without flawless execution. Our production team manages the complex web of logistics required to build temporary structures, power massive lighting rigs, and coordinate multi-vendor load-ins, all while remaining completely invisible to you and your guests.',
-    features: [
-      'Technical production and stage management',
-      'Power distribution and generator planning',
-      'Sound engineering and acoustic management',
-      'Security detail and crowd flow optimization'
-    ],
-    image: 'https://images.unsplash.com/photo-1505366518717-59eb8f2864fa?w=1200&q=80',
+      'We plan menus and beverage experiences for each event of your wedding, working with caterers to match your tastes, traditions, and your guests\' dietary needs.',
+    image: '/images/services/food-beverage-experiences.jpg',
     icon: '✷',
-  }
+  },
+  {
+    id: 'entertainment-artist-management',
+    title: 'Entertainment & Artist Management',
+    tagline: 'The Soundtrack to Your Celebration',
+    description:
+      'We help you choose and book musicians, performers, and hosts, and manage their schedules and requirements so every performance suits the mood of your event.',
+    image: '/images/services/entertainment-artist-management.jpg',
+    icon: '✺',
+  },
+  {
+    id: 'rsvp-event-management',
+    title: 'RSVP & Event Management',
+    tagline: 'Organised from Invitation to Farewell',
+    description:
+      'We keep your guest list, RSVPs, and event schedules in one place, so responses, seating, and day-to-day timelines stay organised and up to date.',
+    image: '/images/services/rsvp-event-management.jpg',
+    icon: '❂',
+  },
+  {
+    id: 'wedding-ceremonies-ritual-management',
+    title: 'Wedding Ceremonies & Ritual Management',
+    tagline: 'Traditions, Honoured with Care',
+    description:
+      'We coordinate your ceremonies and rituals with your families and officiants, so every tradition is planned, timed, and carried out with care.',
+    image: '/images/services/wedding-ceremonies-ritual-management.jpg',
+    icon: '✵',
+  },
+  {
+    id: 'wedding-invites-stationery',
+    title: 'Wedding Invites & Stationery',
+    tagline: 'A First Impression, Beautifully Made',
+    description:
+      'We help you create invitations and stationery that reflect your wedding\'s style, from save-the-dates and invites to programmes, menus, and signage.',
+    image: '/images/services/wedding-invites-stationery.jpg',
+    icon: '❈',
+  },
+  {
+    id: 'wedding-photography-social-media',
+    title: 'Photography & Wedding Social Media',
+    tagline: 'Moments Captured, Memories Shared',
+    description:
+      'We arrange photography to capture your celebration and help you share the moments with family and friends through your wedding\'s social media.',
+    image: '/images/services/wedding-photography-social-media.jpg',
+    icon: '✿',
+  },
 ];

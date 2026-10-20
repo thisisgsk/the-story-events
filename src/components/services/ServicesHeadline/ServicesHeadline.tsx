@@ -43,7 +43,7 @@ export default function ServicesHeadline() {
           variants={item}
           className="font-body text-[clamp(1rem,2vw,1.25rem)] font-light text-primary/72 max-w-[52ch] leading-[1.65] mb-8 tracking-[0.015em]"
         >
-          Seven distinct services. One seamless experience. Your perfect wedding.
+          Eleven distinct services. One seamless experience. Your perfect wedding.
         </motion.p>
 
         {/* Decorative divider — draws inward from both sides */}
