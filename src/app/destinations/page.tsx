@@ -1,49 +1,51 @@
 import type { Metadata } from 'next';
-import { destinations, getDestinationBySlug } from '@/data/locations';
-import type { BrowseView, NetworkFilter } from '@/types/locations';
+import { countries } from '@/data/destinations';
+import { citiesOf } from '@/lib/destinations';
 import LocationsHero from '@/components/locations/LocationsHero/LocationsHero';
-import LocationsExplorer from '@/components/locations/LocationsExplorer/LocationsExplorer';
 import LocationsCTA from '@/components/locations/LocationsCTA/LocationsCTA';
+import CountryTile from '@/components/locations/CountryTile/CountryTile';
+import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
+import PartnerLogos from '@/components/ui/PartnerLogos/PartnerLogos';
+import SectionHeading from '@/components/ui/SectionHeading/SectionHeading';
 
 export const metadata: Metadata = {
   title: 'Destinations | Wedding Destinations & Venues',
   description:
-    'Browse the destinations we operate in — Udaipur, Jaipur, Goa, Hyderabad, Kerala and Phuket — and every venue we can open for you, including properties available by request worldwide.',
+    'Plan your wedding in India, the UAE, Sri Lanka, Thailand or Vietnam. Choose a country, then a city, then the venue.',
+  alternates: { canonical: '/destinations' },
 };
 
-interface PageProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-const first = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value);
-
-const knownCountries = new Set(destinations.map((d) => d.country));
-
-export default async function DestinationsPage({ searchParams }: PageProps) {
-  const params = await searchParams;
-
-  // Legacy /locations, /venues and /venues-guides routes redirect in here carrying intent.
-  const view: BrowseView = first(params.view) === 'venues' ? 'venues' : 'destinations';
-
-  const destinationParam = first(params.destination);
-  const destination = destinationParam && getDestinationBySlug(destinationParam) ? destinationParam : null;
-
-  const countryParam = first(params.country);
-  const country = countryParam && knownCountries.has(countryParam) ? countryParam : null;
-
-  const networkParam = first(params.network);
-  const network: NetworkFilter =
-    networkParam === 'in-network' || networkParam === 'on-request' ? networkParam : 'all';
-
+export default function DestinationsPage() {
   return (
     <>
       <LocationsHero />
-      <LocationsExplorer
-        initialView={destination ? 'venues' : view}
-        initialDestination={destination}
-        initialCountry={country}
-        initialNetwork={network}
-      />
+
+      <section id="explore" className="section bg-primary" aria-label="Choose a country">
+        <div className="container">
+          <AnimatedSection>
+            <SectionHeading
+              label="Where We Plan"
+              title="Choose a country"
+              subtitle="Start with a country, then pick a city and a venue."
+              light
+              centered
+            />
+          </AnimatedSection>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
+            {countries.map((country, i) => {
+              const cityCount = citiesOf(country.slug).length;
+              return (
+                <AnimatedSection key={country.slug} delay={i * 80}>
+                  <CountryTile country={country} subtitle={`${cityCount} ${cityCount === 1 ? 'city' : 'cities'}`} />
+                </AnimatedSection>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <PartnerLogos />
       <LocationsCTA />
     </>
   );

@@ -6,6 +6,8 @@ import WhatsAppFAB from '@/components/layout/WhatsAppFAB/WhatsAppFAB';
 import MotionProvider from '@/components/providers/MotionProvider';
 
 export const metadata: Metadata = {
+  // Lets relative values (e.g. canonical URLs) resolve to absolute ones.
+  metadataBase: new URL('https://thestoryevents.com'),
   title: {
     default: 'The Story Events — Luxury Destination Wedding Planners in India',
     template: '%s | The Story Events',

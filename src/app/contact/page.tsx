@@ -1,49 +1,17 @@
 'use client';
 
-import { use, useState } from 'react';
+import { use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection/AnimatedSection';
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  destination: string;
-  weddingDate: string;
-  guestCount: string;
-  venue: string;
-  budget: string;
-  functions: string;
-  message: string;
-}
-
-const initialForm: FormData = {
-  name: '', email: '', phone: '', destination: '', weddingDate: '',
-  guestCount: '', venue: '', budget: '', functions: '', message: '',
-};
+import EnquiryForm from '@/components/enquiry/EnquiryForm/EnquiryForm';
 
 interface ContactPageProps {
-  searchParams: Promise<{ destination?: string }>;
+  searchParams: Promise<{ destination?: string; venue?: string; location?: string }>;
 }
 
 export default function ContactPage({ searchParams }: ContactPageProps) {
-  const { destination } = use(searchParams);
-  const [form, setForm] = useState<FormData>({ ...initialForm, destination: destination ?? '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200)); // simulate submission
-    setSubmitted(true);
-    setLoading(false);
-  };
+  const { destination, venue, location } = use(searchParams);
 
   return (
     <>
@@ -91,103 +59,20 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
                   </p>
                 </div>
 
-                {submitted ? (
-                  <div className="bg-cream border border-accent/40 rounded-xl px-8 py-12 text-center">
-                    <div className="text-[2.5rem] text-accent mb-5">✦</div>
-                    <h3 className="font-display text-3xl text-primary mb-3">Thank You, {form.name.split(' ')[0]}!</h3>
-                    <p className="text-primary leading-[1.75] max-w-[40ch] mx-auto">We&apos;ve received your enquiry and will be in touch within 24 hours. In the meantime, feel free to browse our portfolio for inspiration.</p>
-                    <Link href="/weddings" className="btn btn-primary mt-6">
-                      Browse Weddings
-                    </Link>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="name">Couple / Family Name *</label>
-                        <input id="name" name="name" type="text" className="form-input" required
-                          placeholder="Your names" value={form.name} onChange={handleChange} />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="email">Email Address *</label>
-                        <input id="email" name="email" type="email" className="form-input" required
-                          placeholder="your@email.com" value={form.email} onChange={handleChange} />
-                      </div>
+                <EnquiryForm
+                  source="contact-page"
+                  initialValues={{ destination: destination ?? location ?? '', venue: venue ?? '' }}
+                  renderSuccess={(values) => (
+                    <div className="bg-cream border border-accent/40 rounded-xl px-8 py-12 text-center">
+                      <div className="text-[2.5rem] text-accent mb-5">✦</div>
+                      <h3 className="font-display text-3xl text-primary mb-3">Thank You, {values.name.trim().split(' ')[0]}!</h3>
+                      <p className="text-primary leading-[1.75] max-w-[40ch] mx-auto">We&apos;ve received your enquiry and will be in touch within 24 hours. In the meantime, feel free to browse our portfolio for inspiration.</p>
+                      <Link href="/weddings" className="btn btn-primary mt-6">
+                        Browse Weddings
+                      </Link>
                     </div>
-
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="phone">Phone Number *</label>
-                        <input id="phone" name="phone" type="tel" className="form-input" required
-                          placeholder="+91 98XXX XXXXX" value={form.phone} onChange={handleChange} />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="weddingDate">Wedding Date / Tentative Month</label>
-                        <input id="weddingDate" name="weddingDate" type="text" className="form-input"
-                          placeholder="e.g. November 2026" value={form.weddingDate} onChange={handleChange} />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="destination">Preferred Destination</label>
-                        <input id="destination" name="destination" type="text" className="form-input"
-                          placeholder="e.g. Udaipur, Goa, or Undecided" value={form.destination} onChange={handleChange} />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="venue">Preferred Venue (if any)</label>
-                        <input id="venue" name="venue" type="text" className="form-input"
-                          placeholder="e.g. Taj Lake Palace" value={form.venue} onChange={handleChange} />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="guestCount">Estimated Guest Count</label>
-                        <select id="guestCount" name="guestCount" className="form-select" value={form.guestCount} onChange={handleChange}>
-                          <option value="">Select range</option>
-                          <option value="under-50">Under 50 (Intimate)</option>
-                          <option value="50-150">50 – 150 Guests</option>
-                          <option value="150-300">150 – 300 Guests</option>
-                          <option value="300-500">300 – 500 Guests</option>
-                          <option value="500+">500+ Guests (Grand)</option>
-                        </select>
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="budget">Estimated Budget Range</label>
-                        <select id="budget" name="budget" className="form-select" value={form.budget} onChange={handleChange}>
-                          <option value="">Select range</option>
-                          <option value="under-25l">Under ₹25 Lakhs</option>
-                          <option value="25-50l">₹25 – 50 Lakhs</option>
-                          <option value="50-100l">₹50 Lakhs – 1 Crore</option>
-                          <option value="1-3cr">₹1 – 3 Crore</option>
-                          <option value="3cr+">₹3 Crore+</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="functions">Functions Planned</label>
-                      <input id="functions" name="functions" type="text" className="form-input"
-                        placeholder="e.g. Mehendi, Sangeet, Wedding, Reception" value={form.functions} onChange={handleChange} />
-                    </div>
-
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="message">Message / Wedding Vision</label>
-                      <textarea id="message" name="message" className="form-textarea" rows={5}
-                        placeholder="Describe your dream wedding — the mood, the aesthetic, the details that matter to you most..."
-                        value={form.message} onChange={handleChange} />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="btn btn-primary self-start min-w-[220px] justify-center mt-3 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                      disabled={loading}
-                    >
-                      {loading ? 'Sending...' : 'Send My Enquiry ✦'}
-                    </button>
-                  </form>
-                )}
+                  )}
+                />
               </AnimatedSection>
             </div>
 

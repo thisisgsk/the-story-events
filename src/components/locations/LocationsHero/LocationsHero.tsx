@@ -3,14 +3,14 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { destinations } from '@/data/locations';
+import { countries } from '@/data/destinations';
 
 const luxuryEase = [0.16, 1, 0.3, 1] as const;
 
 const titleWords = ['Every', 'Destination.', 'Every', 'Venue.'];
 
-/** Names scrolling behind the hero — a quiet reminder of the breadth on offer. */
-const marquee = [...destinations.map((d) => d.name), ...destinations.map((d) => d.name)];
+/** Country names scrolling behind the hero — a quiet reminder of the breadth on offer. */
+const marquee = [...countries.map((c) => c.name), ...countries.map((c) => c.name)];
 
 export default function LocationsHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -108,8 +108,7 @@ export default function LocationsHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: luxuryEase, delay: 1 }}
         >
-          Browse the cities we know intimately — then browse every property we can open for you,
-          including the ones far outside our own map.
+          Choose a country, then a city, then the venue — start wherever the wedding in your head begins.
         </motion.p>
       </motion.div>
 

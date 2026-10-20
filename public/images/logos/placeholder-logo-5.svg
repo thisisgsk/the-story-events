@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 40" width="137" height="40" role="img" aria-label="Brand 5 (placeholder logo)">
+  <!-- PLACEHOLDER logo — replace this file with the real logo (keep the filename, or update src/data/partnerLogos.ts). -->
+  <polygon points="13,11 23,11 28,20 23,29 13,29 8,20" fill="#8b8680"/>
+  <text x="40" y="26" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#8b8680">BRAND 5</text>
+</svg>
